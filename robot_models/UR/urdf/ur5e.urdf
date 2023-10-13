@@ -13,9 +13,9 @@
       <geometry>
         <mesh filename="D:\Mobile Manipulator Research\manipulator_control\robot_models\UR\meshes\ur5e\visual\base.dae"/>
       </geometry>
-      <material name="LightGrey">
+      <!-- <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
+      </material> -->
     </visual>
     <collision>
       <geometry>
@@ -41,9 +41,9 @@
       <geometry>
         <mesh filename="D:\Mobile Manipulator Research\manipulator_control\robot_models\UR\meshes\ur5e\visual\shoulder.dae"/>
       </geometry>
-      <material name="LightGrey">
+      <!-- <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
+      </material> -->
     </visual>
     <collision>
       <geometry>
@@ -69,9 +69,9 @@
       <geometry>
         <mesh filename="D:\Mobile Manipulator Research\manipulator_control\robot_models\UR\meshes\ur5e\visual\upperarm.dae"/>
       </geometry>
-      <material name="LightGrey">
+      <!-- <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
+      </material> -->
     </visual>
     <collision>
       <geometry>
@@ -97,9 +97,9 @@
       <geometry>
         <mesh filename="D:\Mobile Manipulator Research\manipulator_control\robot_models\UR\meshes\ur5e\visual\forearm.dae"/>
       </geometry>
-      <material name="LightGrey">
+      <!-- <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
+      </material> -->
     </visual>
     <collision>
       <geometry>
@@ -125,9 +125,9 @@
       <geometry>
         <mesh filename="D:\Mobile Manipulator Research\manipulator_control\robot_models\UR\meshes\ur5e\visual\wrist1.dae"/>
       </geometry>
-      <material name="LightGrey">
+      <!-- <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
+      </material> -->
     </visual>
     <collision>
       <geometry>
@@ -153,9 +153,9 @@
       <geometry>
         <mesh filename="D:\Mobile Manipulator Research\manipulator_control\robot_models\UR\meshes\ur5e\visual\wrist2.dae"/>
       </geometry>
-      <material name="LightGrey">
+      <!-- <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
+      </material> -->
     </visual>
     <collision>
       <geometry>
@@ -181,9 +181,9 @@
       <geometry>
         <mesh filename="D:\Mobile Manipulator Research\manipulator_control\robot_models\UR\meshes\ur5e\visual\wrist3.dae"/>
       </geometry>
-      <material name="LightGrey">
+      <!-- <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
+      </material> -->
     </visual>
     <collision>
       <geometry>
