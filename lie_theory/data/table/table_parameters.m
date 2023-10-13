@@ -1,0 +1,4 @@
+parameters.dt
+parameters.lambda_e
+parameters.lambda_v
+parameters.lambda_j
