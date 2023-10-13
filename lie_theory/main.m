@@ -86,29 +86,33 @@ dof2.total = parameters.base_dof;
 
 %% Initialize
 % set array of pose goals (4 by 4 by k)
+num_paths = 4;
 pose_goals_helix = generate_helix(2.5,0.0125,parameters.dt,parameters.time); %% working
 pose_goals_sine = generate_sine(0.25,0.25,parameters.dt,parameters.time); %% working
 pose_goals_horizontal = generate_horizontal_helix(0.5,1,parameters.dt,parameters.time); %% working
+pose_goals_spiral = generate_spiral_sine(2.5,0.5,parameters.dt,parameters.time);
 
-timer = zeros([parameters.steps,3]);
+timer = zeros([parameters.steps,num_paths]);
 x = zeros([6,1]);
-xdot = zeros([6,1,3]);
+xdot = zeros([6,1,num_paths]);
 dx = zeros([6,1]);
 parameters.base_pose = eye(4);
-tool_pose = zeros([4,4,parameters.steps,3]);
-error = zeros([4,4,parameters.steps,3]);
+tool_pose = zeros([4,4,parameters.steps,num_paths]);
+error = zeros([4,4,parameters.steps,num_paths]);
 
 
 %% Main
 pose = eye(4);
 
-for trial = 1:1:3
+for trial = 1:1:num_paths
     if trial == 1
         pose_goals = pose_goals_helix;
     elseif trial == 2
         pose_goals = pose_goals_sine;
-    else
+    elseif trial == 3
         pose_goals = pose_goals_horizontal;
+    else
+        pose_goals = pose_goals_spiral;
     end
 
 %     timer = zeros([1,parameters.steps]);

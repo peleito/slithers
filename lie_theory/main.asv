@@ -3,6 +3,11 @@ clear
 close all
 % clc
 
+addpath(genpath('data'))
+addpath(genpath('helper'))
+addpath(genpath('paths'))
+addpath(genpath('robots'))
+
 %% Load Robot
 husky_ur5e;
 % % Lbx = 0.34;
@@ -81,6 +86,7 @@ dof2.total = parameters.base_dof;
 
 %% Initialize
 % set array of pose goals (4 by 4 by k)
+num_paths = 3;
 pose_goals_helix = generate_helix(2.5,0.0125,parameters.dt,parameters.time); %% working
 pose_goals_sine = generate_sine(0.25,0.25,parameters.dt,parameters.time); %% working
 pose_goals_horizontal = generate_horizontal_helix(0.5,1,parameters.dt,parameters.time); %% working

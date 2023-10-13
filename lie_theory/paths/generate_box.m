@@ -20,7 +20,7 @@ plotTransforms(translation,rotation_mat)
 
 poses = se3(rotation_mat,translation);
 
-plotTransforms(poses)
-plot3(x,y,z)
+% plotTransforms(poses)
+% plot3(x,y,z)
 
 end

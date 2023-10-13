@@ -23,7 +23,7 @@ end
 poses = se3(rotation_mat,translation);
 % poses = poses(int32(rand()*length(poses)))
 
-plotTransforms(poses,'FrameSize',1)
+% plotTransforms(poses,'FrameSize',1)
 % plot3(x,y,z)
 
 end
