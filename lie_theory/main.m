@@ -56,9 +56,9 @@ parameters.screws = [S1; % base angular velocity
                      S3; % shoulder pan
                      S4; % shoulder lift
                      S5; % elbow
-                     S6]; % wrist 1
-%                      S7; % wrist 2
-%                      S8]; % wrist 3 screw joints for mobile manipulator (n rows of [omegax,omegay,omegaz,x,y,z])
+                     S6; % wrist 1
+                     S7; % wrist 2
+                     S8]; % wrist 3 screw joints for mobile manipulator (n rows of [omegax,omegay,omegaz,x,y,z])
 
 parameters.config_state = config_state; % zero state pose for mobile manipulator (se3 matrix, pose at q = [0])
 parameters.stateMin = stateMin;
@@ -69,11 +69,11 @@ parameters.dt = 0.01;
 parameters.lambda_e = [100,100,100,100,100,100]';
 parameters.lambda_j = 0.000001;
 % parameters.lambda_v = [10,10,5,5,5,1,1,1]'/; % length of n
-parameters.lambda_v = 10*[0.05,0.05,0.025,0.025,0.01,0.01];%,0,0]'; % length of n
+parameters.lambda_v = 10*[0.05,0.05,0.025,0.025,0.01,0.01,0.01,0.01]'; % length of n
 parameters.time = 20;
 parameters.steps = parameters.time/parameters.dt;
 parameters.base_dof = 2;
-parameters.arm_dof = 4;
+parameters.arm_dof = 6;
 parameters.total_dof = parameters.base_dof+parameters.arm_dof;
 
 dof.base = parameters.base_dof;
@@ -93,9 +93,9 @@ pose_goals_horizontal = generate_horizontal_helix(0.5,1,parameters.dt,parameters
 pose_goals_spiral = generate_spiral_sine(2.5,0.5,parameters.dt,parameters.time);
 
 timer = zeros([parameters.steps,num_paths]);
-x = zeros([6,1]);
-xdot = zeros([6,1,num_paths]);
-dx = zeros([6,1]);
+x = zeros([8,1]);
+xdot = zeros([8,1,num_paths]);
+dx = zeros([8,1]);
 parameters.base_pose = eye(4);
 tool_pose = zeros([4,4,parameters.steps,num_paths]);
 error = zeros([4,4,parameters.steps,num_paths]);
@@ -116,9 +116,9 @@ for trial = 1:1:num_paths
     end
 
 %     timer = zeros([1,parameters.steps]);
-    x = zeros([6,1]);
+    x = zeros([8,1]);
 %     xdot = zeros([6,1,3]);
-    dx = zeros([6,1]);
+    dx = zeros([8,1]);
     parameters.base_pose = eye(4);
 
     for plot_step = 1:parameters.steps
@@ -137,7 +137,7 @@ for trial = 1:1:num_paths
         timer(plot_step,trial) = timed;
         
         tool_pose(:,:,plot_step,trial) = parameters.base_pose*step_forward(parameters.screws,dx,dof,parameters.dt)*parameters.config_state;
-        tool_pose(:,:,plot_step,trial);
+        % tool_pose(:,:,plot_step,trial);
         x(1:2) = [0;0];
         x(3:end) = dx(3:end);
     
@@ -146,7 +146,7 @@ for trial = 1:1:num_paths
     %     actual = manifold_to_vector(tform(tool_pose(plot_step)));
         actual = tool_pose(:,:,plot_step,trial);
         error(:,:,plot_step,trial) = goal-actual;
-        error(:,:,plot_step,trial);
+        % error(:,:,plot_step,trial);
     
     end
 

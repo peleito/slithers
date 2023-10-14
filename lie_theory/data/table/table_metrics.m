@@ -11,10 +11,10 @@ max_lin_jerk = max(states.base.xddottable.Var1);
 max_ang_jerk = max(states.base.omegaddottable.Var1);
 
 max_ang_vel_arm = squeeze(max(max(states.arm.qdottable.Var1)));
-states.arm.qddot = [zeros([1,4,4]);diff(states.arm.qdottable.Var1,1,1)];
+states.arm.qddot = [zeros([1,6,4]);diff(states.arm.qdottable.Var1,1,1)];
 states.arm.qddottable = smoothdata(timetable(time',(states.arm.qddot/parameters.dt)));
 max_ang_accel_arm = squeeze(max(max(states.arm.qddottable.Var1)));
-states.arm.qdddot = [zeros([1,4,4]);diff(states.arm.qddottable.Var1,1,1)];
+states.arm.qdddot = [zeros([1,6,4]);diff(states.arm.qddottable.Var1,1,1)];
 states.arm.qdddottable = smoothdata(timetable(time',(states.arm.qdddot/parameters.dt)));
 max_ang_jerk_arm = squeeze(max(max(states.arm.qdddottable.Var1)));
 

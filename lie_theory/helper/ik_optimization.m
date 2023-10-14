@@ -49,6 +49,7 @@ function [states_d] = ik_optimization(current_state, current_vel, pose_goal, par
 %     fun = @(d_state) lambda_e*norm(manifold_to_vector(step_forward(screws,d_state))-tau_poses) + norm(lambda_v.*d_state);
 %     fun = @(d_state) lambda_e*norm(get_tau_joints(screws,d_state,dof)-tau_poses) + norm(lambda_v.*d_state);
     fun = @(d_state) norm(lambda_e.*(get_tau_joints(screws,d_state,dof,dt)-tau_poses)) + norm(lambda_v.*d_state);
+        % % fun = @(d_state) norm(lambda_e.*(get_tau_joints(screws,d_state,dof,dt)-tau_poses)) + norm(lambda_v.*d_state) + lambda_j*abs((5/2*d_state-9*xk+12*xk1-7*xk2+3/2*xk3)/(dt^3)); %norm(1*state_d(1)-3*xk+3*xk1-1*xk2); % norm(5/2*state_d(1)-9*xk+12*xk1-7*xk2+3/2*xk3);
     x0 = current_state;
     A = [];
     b = [];

@@ -2,7 +2,7 @@ figure('units','normalized','outerposition',[0 0 1 1])
 
 states.arm.q = xdot(3:end,:,:);
 states.arm.qtable = smoothdata(timetable(time',pagetranspose(states.arm.q)));
-states.arm.qdot = [zeros([1,4,4]);diff(states.arm.qtable.Var1,1,1)];
+states.arm.qdot = [zeros([1,6,4]);diff(states.arm.qtable.Var1,1,1)];
 states.arm.qdottable = smoothdata(timetable(time',(states.arm.qdot/parameters.dt)));
 
 % vertical helix
