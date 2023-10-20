@@ -2,16 +2,19 @@ figure('units','normalized','outerposition',[0 0 1 1])
 
 states.base.omega = squeeze(xdot(1,:,:));
 states.base.omegatable = smoothdata(timetable(time',states.base.omega));
-states.base.omegadot = [zeros([1,4]);diff(states.base.omegatable.Var1,1,1)];
+states.base.omegadot = [zeros([1,num_paths]);diff(states.base.omegatable.Var1,1,1)];
 states.base.omegadottable = smoothdata(timetable(time',states.base.omegadot/parameters.dt));
 
 % angular omega dot
 subplot(1,2,1)
 hold on
-plot(states.base.omegatable.Time,states.base.omegatable.Var1(:,1),'LineWidth',linewidth)
-plot(states.base.omegatable.Time,states.base.omegatable.Var1(:,2),'LineWidth',linewidth)
-plot(states.base.omegatable.Time,states.base.omegatable.Var1(:,3),'LineWidth',linewidth)
-plot(states.base.omegatable.Time,states.base.omegatable.Var1(:,4),'LineWidth',linewidth)
+for i = 1:1:num_paths
+    % plot(states.base.omegatable.Time,states.base.omegatable.Var1(:,1),'LineWidth',linewidth)
+    % plot(states.base.omegatable.Time,states.base.omegatable.Var1(:,2),'LineWidth',linewidth)
+    % plot(states.base.omegatable.Time,states.base.omegatable.Var1(:,3),'LineWidth',linewidth)
+    % plot(states.base.omegatable.Time,states.base.omegatable.Var1(:,4),'LineWidth',linewidth)
+    plot(states.base.omegatable.Time,states.base.omegatable.Var1(:,i),'LineWidth',linewidth)
+end
 legend('Vertical Helix','Sine Wave','Horizontal Helix','Spiral Wave')
 grid minor
 set(gca,'fontsize',fontsize)
@@ -24,10 +27,13 @@ title('Base Angular Velocity','FontSize',titlesize,'Interpreter','latex')
 % angular omega double dot
 subplot(1,2,2)
 hold on
-plot(states.base.omegadottable.Time,states.base.omegadottable.Var1(:,1),'LineWidth',linewidth)
-plot(states.base.omegadottable.Time,states.base.omegadottable.Var1(:,2),'LineWidth',linewidth)
-plot(states.base.omegadottable.Time,states.base.omegadottable.Var1(:,3),'LineWidth',linewidth)
-plot(states.base.omegadottable.Time,states.base.omegadottable.Var1(:,4),'LineWidth',linewidth)
+for i = 1:1:num_paths
+    % plot(states.base.omegadottable.Time,states.base.omegadottable.Var1(:,1),'LineWidth',linewidth)
+    % plot(states.base.omegadottable.Time,states.base.omegadottable.Var1(:,2),'LineWidth',linewidth)
+    % plot(states.base.omegadottable.Time,states.base.omegadottable.Var1(:,3),'LineWidth',linewidth)
+    % plot(states.base.omegadottable.Time,states.base.omegadottable.Var1(:,4),'LineWidth',linewidth)
+    plot(states.base.omegadottable.Time,states.base.omegadottable.Var1(:,i),'LineWidth',linewidth)
+end
 legend('Vertical Helix','Sine Wave','Horizontal Helix','Spiral Wave')
 grid minor
 set(gca,'fontsize',fontsize)

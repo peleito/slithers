@@ -3,7 +3,7 @@ function poses = generate_spiral_sine(a,b,dt,time)
 %   Detailed explanation goes here
 t = 0:dt:time;
 x = t+sin(a*t);
-y = -t+cos(a*t);
+y = cos(a*t);
 z = b*sin(t)+3*b;
 translation = [x',y',z'];
 

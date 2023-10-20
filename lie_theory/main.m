@@ -9,71 +9,35 @@ addpath(genpath('paths'))
 addpath(genpath('robots'))
 
 %% Load Robot
-husky_ur5e;
-% % Lbx = 0.34;
-% % % Lbx = 0;
-% % Lby = 0.0;
-% % Lbz = 0.384;
-% % % Lbz = 0;
-% % husky_base_to_ur_base = [Lbx,Lby,Lbz];
-% % husky_ur = eye(4);
-% % husky_ur(1:3,4) = husky_base_to_ur_base;
-% % 
-% % S1_w = [0,0,1]; % base angular
-% % S1_v = -cross(S1_w,[0,0,0]);
-% % S1 = [S1_w,S1_v];
-% % 
-% % S2_w = [0,0,0]; % base linear
-% % S2_v = [1,0,0];
-% % S2 = [S2_w,S2_v];
-% % 
-% % S3_w = [0,0,1]; % shoulder pan
-% % S3_v = -cross(S3_w,[0,0,0.163]+husky_base_to_ur_base);
-% % S3 = [S3_w,S3_v];
-% % 
-% % S4_w = [0,1,0]; % shoulder lift
-% % S4_v = -cross(S4_w,[0,0,0.163]+husky_base_to_ur_base);
-% % S4 = [S4_w,S4_v];
-% % 
-% % S5_w = [0,1,0]; % elbow
-% % S5_v = -cross(S5_w,[0.425,0,0.162]+husky_base_to_ur_base);
-% % S5 = [S5_w,S5_v];
-% % 
-% % S6_w = [0,1,0]; % wrist 1
-% % S6_v = -cross(S6_w,[0.817,0.133,0.162]+husky_base_to_ur_base);
-% % S6 = [S6_w,S6_v];
-% % 
-% % S7_w = [0,0,-1]; % wrist 2
-% % S7_v = -cross(S7_w,[0.817,0.133,0.063]+husky_base_to_ur_base); 
-% % S7 = [S7_w,S7_v];
-% % 
-% % S8_w = [0,1,0]; % wrist 3
-% % S8_v = -cross(S8_w,[0.817,0.233,0.063]+husky_base_to_ur_base);
-% % S8 = [S8_w,S8_v];
+% Load road and set user preferences and parameters here. No need to edit
+% other files or code unless for plotting and visualization.
 
-parameters.screws = [S1; % base angular velocity
-                     S2; % base linear velocity
-                     S3; % shoulder pan
-                     S4; % shoulder lift
-                     S5; % elbow
-                     S6; % wrist 1
-                     S7; % wrist 2
-                     S8]; % wrist 3 screw joints for mobile manipulator (n rows of [omegax,omegay,omegaz,x,y,z])
+% Load robot file here with screws and dof fully defined
+% husky_ur5e;
+husky_ur5e_holo;
+dt = 0.1; % Time step for the duration <second, R^1>
+time = 20; % Simulated duration of the experiment (does not match realtime) <seconds, R^1>
+num_paths = 3; % 1-3 to run up to the first 3 paths <unitless, R^1>
+lambda_e = [100,100,100,100,100,100]'; % Weights for error in screw vector [rx,ry,rz,x,y,z]' <unitless, R^6>
+lambda_j = 0.000001; % Weight for jerk <unitless, R^1>
+lambda_v = 10*[0.05,0.05,0.05,0.025,0.025,0.01,0.01,0.01,0.01]'; % Must match the number of screws and dof (n) and be in the same order <unitless, R^n>
 
+
+
+%% Parameters definition
+parameters.screws = screws;
 parameters.config_state = config_state; % zero state pose for mobile manipulator (se3 matrix, pose at q = [0])
 parameters.stateMin = stateMin;
 parameters.stateMax = stateMax;
-
-%% Parameters definition
-parameters.dt = 0.01;
-parameters.lambda_e = [100,100,100,100,100,100]';
-parameters.lambda_j = 0.000001;
+parameters.dt = dt;
+parameters.lambda_e = lambda_e;
+parameters.lambda_j = lambda_j;
 % parameters.lambda_v = [10,10,5,5,5,1,1,1]'/; % length of n
-parameters.lambda_v = 10*[0.05,0.05,0.025,0.025,0.01,0.01,0.01,0.01]'; % length of n
-parameters.time = 20;
+parameters.lambda_v = lambda_v; 
+parameters.time = time;
 parameters.steps = parameters.time/parameters.dt;
-parameters.base_dof = 2;
-parameters.arm_dof = 6;
+parameters.base_dof = base_dof; 
+parameters.arm_dof = arm_dof;
 parameters.total_dof = parameters.base_dof+parameters.arm_dof;
 
 dof.base = parameters.base_dof;
@@ -86,16 +50,15 @@ dof2.total = parameters.base_dof;
 
 %% Initialize
 % set array of pose goals (4 by 4 by k)
-num_paths = 4;
 pose_goals_helix = generate_helix(2.5,0.0125,parameters.dt,parameters.time); %% working
 pose_goals_sine = generate_sine(0.25,0.25,parameters.dt,parameters.time); %% working
 pose_goals_horizontal = generate_horizontal_helix(0.5,1,parameters.dt,parameters.time); %% working
 pose_goals_spiral = generate_spiral_sine(2.5,0.5,parameters.dt,parameters.time);
 
 timer = zeros([parameters.steps,num_paths]);
-x = zeros([8,1]);
-xdot = zeros([8,1,num_paths]);
-dx = zeros([8,1]);
+x = zeros([dof.total,1]);
+xdot = zeros([dof.total,1,num_paths]);
+dx = zeros([dof.total,1]);
 parameters.base_pose = eye(4);
 tool_pose = zeros([4,4,parameters.steps,num_paths]);
 error = zeros([4,4,parameters.steps,num_paths]);
@@ -116,9 +79,9 @@ for trial = 1:1:num_paths
     end
 
 %     timer = zeros([1,parameters.steps]);
-    x = zeros([8,1]);
+    x = zeros([dof.total,1]);
 %     xdot = zeros([6,1,3]);
-    dx = zeros([8,1]);
+    dx = zeros([dof.total,1]);
     parameters.base_pose = eye(4);
 
     for plot_step = 1:parameters.steps
@@ -138,8 +101,8 @@ for trial = 1:1:num_paths
         
         tool_pose(:,:,plot_step,trial) = parameters.base_pose*step_forward(parameters.screws,dx,dof,parameters.dt)*parameters.config_state;
         % tool_pose(:,:,plot_step,trial);
-        x(1:2) = [0;0];
-        x(3:end) = dx(3:end);
+        x(1:dof.base) = zeros([dof.base,1]);
+        x(dof.base+1:end) = dx(dof.base+1:end);
     
     %     goal = manifold_to_vector(ee_desired);
         goal = ee_desired;
@@ -475,6 +438,7 @@ plot_base_angular
 %% Plot joint states
 
 plot_joints
+plot_joints_sep
 
 % % figure('units','normalized','outerposition',[0 0 1 1])
 % % 
