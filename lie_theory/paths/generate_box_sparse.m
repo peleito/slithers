@@ -3,7 +3,7 @@ function poses = generate_box_sparse(a,dt,time)
 %   Detailed explanation goes here
 t = 0:dt:time;
 divisions = floor(length(t)/8);
-divisions = 10
+% divisions = 10
 
 x_c = [0,a/2,a/2,-a/2,-a/2,a/2,a/2,0,0];
 y_c = [a/2,a/2,-a/2,-a/2,-a/2,-a/2,a/2,a/2,a/2];
@@ -35,7 +35,7 @@ end
 
 poses = se3(rotation_mat,translation);
 
-plotTransforms(poses)
+% plotTransforms(poses)
 % plot3(x,y,z)
 
 end

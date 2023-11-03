@@ -48,8 +48,8 @@ config_state = [-1,0,0,0.817+Lbx;
                            0,1,0,0.063+Lbz;
                            0,0,0,1]; % zero state pose for mobile manipulator (se3 matrix, pose at q = [0])
 
-stateMin = [-2*pi,-5,-5,-2*pi,-2*pi,-2*pi,-2*pi,-2*pi,-2*pi]';
-stateMax = [2*pi,5,5,2*pi,2*pi,2*pi,2*pi,2*pi,2*pi]';
+stateMin = [-pi,-2,-2,-2*pi,-2*pi,-2*pi,-2*pi,-2*pi,-2*pi]';
+stateMax = [pi,2,2,2*pi,2*pi,2*pi,2*pi,2*pi,2*pi]';
 
 screws = [S1; % base angular velocity
                      S2; % base linear velocity

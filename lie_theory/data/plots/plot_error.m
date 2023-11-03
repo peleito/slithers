@@ -1,4 +1,5 @@
 figure('units','normalized','outerposition',[0 0 1 1])
+tcl = tiledlayout(2,num_paths);
 
 % vertical helix
 pose_goal = tform(pose_goals_helix);
@@ -25,12 +26,13 @@ rmse_pos(1) = sqrt(mean(residuals.^2,'all'));
 residuals = [error_plot.rxtable.Var1,error_plot.rytable.Var1,error_plot.rztable.Var1];
 rmse_rot(1) = sqrt(mean(residuals.^2,'all'));
 
-subplot(2,num_paths,1)
+% subplot(2,num_paths,1)
+nexttile(tcl,1)
 hold on
 plot(error_plot.xtable.Time,error_plot.xtable.Var1,'LineWidth',linewidth)
 plot(error_plot.ytable.Time,error_plot.ytable.Var1,'LineWidth',linewidth)
 plot(error_plot.ztable.Time,error_plot.ztable.Var1,'LineWidth',linewidth)
-legend('x','y','z')
+% legend('x','y','z')
 grid minor
 set(gca,'fontsize',fontsize)
 xlabel('\textbf{Time}','FontSize',labelsize,'Interpreter','latex')
@@ -38,20 +40,23 @@ ylabel('\textbf{error (m)}','FontSize',labelsize,'Interpreter','latex')
 xlim(seconds([0,20]))
 axis square
 title('Vertical Helix','FontSize',titlesize,'Interpreter','latex')
+ylim([-0.01,0.01])
 
 
-subplot(2,num_paths,num_paths+1)
+% subplot(2,num_paths,num_paths+1)
+nexttile(tcl,4)
 hold on
 plot(error_plot.rxtable.Time,error_plot.rxtable.Var1,'LineWidth',linewidth)
 plot(error_plot.rytable.Time,error_plot.rytable.Var1,'LineWidth',linewidth)
 plot(error_plot.rztable.Time,error_plot.rztable.Var1,'LineWidth',linewidth)
-legend('roll','pitch','yaw')
+% legend('roll','pitch','yaw')
 grid minor
 set(gca,'fontsize',fontsize)
 xlabel('\textbf{Time}','FontSize',labelsize,'Interpreter','latex')
 ylabel('\textbf{error (rad)}','FontSize',labelsize,'Interpreter','latex')
 xlim(seconds([0,20]))
 axis square
+ylim([-0.01,0.01])
 
 
 % sine wave
@@ -79,12 +84,13 @@ rmse_pos(2) = sqrt(mean(residuals.^2,'all'));
 residuals = [error_plot.rxtable.Var1,error_plot.rytable.Var1,error_plot.rztable.Var1];
 rmse_rot(2) = sqrt(mean(residuals.^2,'all'));
 
-subplot(2,num_paths,2)
+% subplot(2,num_paths,2)
+nexttile(tcl,2)
 hold on
 plot(error_plot.xtable.Time,error_plot.xtable.Var1,'LineWidth',linewidth)
 plot(error_plot.ytable.Time,error_plot.ytable.Var1,'LineWidth',linewidth)
 plot(error_plot.ztable.Time,error_plot.ztable.Var1,'LineWidth',linewidth)
-legend('x','y','z')
+% legend('x','y','z')
 grid minor
 set(gca,'fontsize',fontsize)
 xlabel('\textbf{Time}','FontSize',labelsize,'Interpreter','latex')
@@ -92,19 +98,22 @@ ylabel('\textbf{error (m)}','FontSize',labelsize,'Interpreter','latex')
 xlim(seconds([0,20]))
 axis square
 title('Sine Wave','FontSize',titlesize,'Interpreter','latex')
+ylim([-0.01,0.01])
 
-subplot(2,num_paths,num_paths+2)
+% subplot(2,num_paths,num_paths+2)
+nexttile(tcl,5)
 hold on
 plot(error_plot.rxtable.Time,error_plot.rxtable.Var1,'LineWidth',linewidth)
 plot(error_plot.rytable.Time,error_plot.rytable.Var1,'LineWidth',linewidth)
 plot(error_plot.rztable.Time,error_plot.rztable.Var1,'LineWidth',linewidth)
-legend('roll','pitch','yaw')
+% legend('roll','pitch','yaw')
 grid minor
 set(gca,'fontsize',fontsize)
 xlabel('\textbf{Time}','FontSize',labelsize,'Interpreter','latex')
 ylabel('\textbf{error (rad)}','FontSize',labelsize,'Interpreter','latex')
 xlim(seconds([0,20]))
 axis square
+ylim([-0.01,0.01])
 
 % horizontal helix
 pose_goal = tform(pose_goals_horizontal);
@@ -131,12 +140,13 @@ rmse_pos(3) = sqrt(mean(residuals.^2,'all'));
 residuals = [error_plot.rxtable.Var1,error_plot.rytable.Var1,error_plot.rztable.Var1];
 rmse_rot(3) = sqrt(mean(residuals.^2,'all'));
 
-subplot(2,num_paths,3)
+% subplot(2,num_paths,3)
+nexttile(tcl,3)
 hold on
 plot(error_plot.xtable.Time,error_plot.xtable.Var1,'LineWidth',linewidth)
 plot(error_plot.ytable.Time,error_plot.ytable.Var1,'LineWidth',linewidth)
 plot(error_plot.ztable.Time,error_plot.ztable.Var1,'LineWidth',linewidth)
-legend('x','y','z')
+legend('x','y','z','Location','eastoutside')
 grid minor
 set(gca,'fontsize',fontsize)
 xlabel('\textbf{Time}','FontSize',labelsize,'Interpreter','latex')
@@ -144,19 +154,22 @@ ylabel('\textbf{error (m)}','FontSize',labelsize,'Interpreter','latex')
 xlim(seconds([0,20]))
 axis square
 title('Horizontal Helix','FontSize',titlesize,'Interpreter','latex')
+ylim([-0.01,0.01])
 
-subplot(2,num_paths,num_paths+3)
+% subplot(2,num_paths,num_paths+3)
+nexttile(tcl,6)
 hold on
 plot(error_plot.rxtable.Time,error_plot.rxtable.Var1,'LineWidth',linewidth)
 plot(error_plot.rytable.Time,error_plot.rytable.Var1,'LineWidth',linewidth)
 plot(error_plot.rztable.Time,error_plot.rztable.Var1,'LineWidth',linewidth)
-legend('roll','pitch','yaw')
+legend('roll','pitch','yaw','Location','eastoutside')
 grid minor
 set(gca,'fontsize',fontsize)
 xlabel('\textbf{Time}','FontSize',labelsize,'Interpreter','latex')
 ylabel('\textbf{error (rad)}','FontSize',labelsize,'Interpreter','latex')
 xlim(seconds([0,20]))
 axis square
+ylim([-0.01,0.01])
 
 % % % spiral
 % % pose_goal = tform(pose_goals_spiral);
@@ -209,6 +222,12 @@ axis square
 % % ylabel('\textbf{error (rad)}','FontSize',labelsize,'Interpreter','latex')
 % % xlim(seconds([0,20]))
 % % axis square
+
+% hL1 = legend('x','y','z');
+% hL1.Layout.Tile = 'East';
+% 
+% hL2 = legend('roll','pitch','yaw');
+% hL2.Layout.Tile = 'southeast';
 
 if save
     pause(5)

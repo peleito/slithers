@@ -1,0 +1,43 @@
+comp_time =
+
+    0.0682
+
+
+rmse_pos =
+
+    0.1001    0.1001    0.1001
+
+
+rmse_rot =
+
+    0.0273    0.0273    0.0273
+
+
+max_lin_vel =
+
+    0.4058
+
+
+max_ang_vel_arm =
+
+    0.9229
+
+
+max_lin_accel =
+
+    1.4831
+
+
+max_ang_accel_arm =
+
+    2.1545
+
+
+max_lin_jerk =
+
+    8.4501
+
+
+max_ang_jerk_arm =
+
+   19.1970

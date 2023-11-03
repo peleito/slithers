@@ -7,6 +7,7 @@ addpath(genpath('data'))
 addpath(genpath('helper'))
 addpath(genpath('paths'))
 addpath(genpath('robots'))
+addpath(genpath(fileparts('../github_repo/')))
 
 %% Load Robot
 % Load road and set user preferences and parameters here. No need to edit
@@ -18,10 +19,10 @@ husky_ur5e_holo;
 dt = 0.1; % Time step for the duration <second, R^1>
 time = 20; % Simulated duration of the experiment (does not match realtime) <seconds, R^1>
 num_paths = 3; % 1-3 to run up to the first 3 paths <unitless, R^1>
-lambda_e = [100,100,100,100,100,100]'; % Weights for error in screw vector [rx,ry,rz,x,y,z]' <unitless, R^6>
-lambda_j = 0.000001; % Weight for jerk <unitless, R^1>
-lambda_v = 10*[0.05,0.05,0.05,0.025,0.025,0.01,0.01,0.01,0.01]'; % Must match the number of screws and dof (n) and be in the same order <unitless, R^n>
-
+lambda_e = 25*[1,1,1,1,1,1]'; % Weights for error in screw vector [rx,ry,rz,x,y,z]' <unitless, R^6>
+lambda_j = 0.001; % Weight for jerk <unitless, R^1>
+% lambda_v = 10*[0.1,0.1,0.025,0.025,0.01,0.01,0.01,0.01]'; % Must match the number of screws and dof (n) and be in the same order <unitless, R^n>
+lambda_v = 10*[0.1,0.1,0.1,0.025,0.025,0.01,0.01,0.01,0.01]'; % Must match the number of screws and dof (n) and be in the same order <unitless, R^n>
 
 
 %% Parameters definition
@@ -119,7 +120,7 @@ linewidth = 2;
 fontsize = 20;
 labelsize = 28;
 titlesize = 40;
-save = false;
+save = true;
 time = seconds(0:parameters.dt:parameters.time-parameters.dt);
 
 %% Plot paths
@@ -340,7 +341,9 @@ plot_error
 
 %% Plot base linear states
 
-plot_base_linear
+% plot_base_linear
+% plot_base_nh
+plot_base_h
 
 % % figure('units','normalized','outerposition',[0 0 1 1])
 % % 
@@ -389,7 +392,7 @@ plot_base_linear
 
 %% Plot base angular states
 
-plot_base_angular
+% plot_base_angular
 
 % % figure('units','normalized','outerposition',[0 0 1 1])
 % % 
@@ -438,7 +441,7 @@ plot_base_angular
 %% Plot joint states
 
 plot_joints
-plot_joints_sep
+% plot_joints_sep
 
 % % figure('units','normalized','outerposition',[0 0 1 1])
 % % 
@@ -534,7 +537,8 @@ table_parameters
 % % parameters.lambda_j
 
 %% Table metrics
-table_metrics
+% table_metrics_nh
+table_metrics_h
 % % comp_time = mean(timer);
 % % max_lin_vel = max(states.base.xtable.Var1);
 % % max_ang_vel = max(states.base.omegatable.Var1);
