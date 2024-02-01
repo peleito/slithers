@@ -36,7 +36,7 @@ plot(error_plot.ztable.Time,error_plot.ztable.Var1,'LineWidth',linewidth)
 grid minor
 set(gca,'fontsize',fontsize)
 xlabel('\textbf{Time}','FontSize',labelsize,'Interpreter','latex')
-ylabel('\textbf{error (m)}','FontSize',labelsize,'Interpreter','latex')
+ylabel('\textbf{Position Error (m)}','FontSize',labelsize,'Interpreter','latex')
 xlim(seconds([0,20]))
 axis square
 title('Vertical Helix','FontSize',titlesize,'Interpreter','latex')
@@ -53,7 +53,7 @@ plot(error_plot.rztable.Time,error_plot.rztable.Var1,'LineWidth',linewidth)
 grid minor
 set(gca,'fontsize',fontsize)
 xlabel('\textbf{Time}','FontSize',labelsize,'Interpreter','latex')
-ylabel('\textbf{error (rad)}','FontSize',labelsize,'Interpreter','latex')
+ylabel('\textbf{Orientation Error (rad)}','FontSize',labelsize,'Interpreter','latex')
 xlim(seconds([0,20]))
 axis square
 ylim([-0.01,0.01])
@@ -94,7 +94,7 @@ plot(error_plot.ztable.Time,error_plot.ztable.Var1,'LineWidth',linewidth)
 grid minor
 set(gca,'fontsize',fontsize)
 xlabel('\textbf{Time}','FontSize',labelsize,'Interpreter','latex')
-ylabel('\textbf{error (m)}','FontSize',labelsize,'Interpreter','latex')
+ylabel('\textbf{Position Error (m)}','FontSize',labelsize,'Interpreter','latex')
 xlim(seconds([0,20]))
 axis square
 title('Sine Wave','FontSize',titlesize,'Interpreter','latex')
@@ -110,7 +110,7 @@ plot(error_plot.rztable.Time,error_plot.rztable.Var1,'LineWidth',linewidth)
 grid minor
 set(gca,'fontsize',fontsize)
 xlabel('\textbf{Time}','FontSize',labelsize,'Interpreter','latex')
-ylabel('\textbf{error (rad)}','FontSize',labelsize,'Interpreter','latex')
+ylabel('\textbf{Orientation Error (rad)}','FontSize',labelsize,'Interpreter','latex')
 xlim(seconds([0,20]))
 axis square
 ylim([-0.01,0.01])
@@ -150,7 +150,7 @@ legend('x','y','z','Location','eastoutside')
 grid minor
 set(gca,'fontsize',fontsize)
 xlabel('\textbf{Time}','FontSize',labelsize,'Interpreter','latex')
-ylabel('\textbf{error (m)}','FontSize',labelsize,'Interpreter','latex')
+ylabel('\textbf{Position Error (m)}','FontSize',labelsize,'Interpreter','latex')
 xlim(seconds([0,20]))
 axis square
 title('Horizontal Helix','FontSize',titlesize,'Interpreter','latex')
@@ -166,7 +166,7 @@ legend('roll','pitch','yaw','Location','eastoutside')
 grid minor
 set(gca,'fontsize',fontsize)
 xlabel('\textbf{Time}','FontSize',labelsize,'Interpreter','latex')
-ylabel('\textbf{error (rad)}','FontSize',labelsize,'Interpreter','latex')
+ylabel('\textbf{Orientation Error (rad)}','FontSize',labelsize,'Interpreter','latex')
 xlim(seconds([0,20]))
 axis square
 ylim([-0.01,0.01])
