@@ -26,7 +26,7 @@ xlim(seconds([0,20]))
 axis square
 title('Angular Velocity','FontSize',titlesize,'Interpreter','latex')
 
-states.base.x = squeeze(xdot(3,:,:));
+states.base.x = squeeze(xdot(2,:,:));
 states.base.xtable = smoothdata(timetable(time',states.base.x));
 states.base.xdot = [zeros([1,num_paths]);diff(states.base.xtable.Var1,1,1)];
 

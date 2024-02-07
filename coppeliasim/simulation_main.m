@@ -9,8 +9,8 @@ addpath('..\lie_theory\');
 robot = 'husky';
 % robot = 'holonomic';
 
-% pathName = 'vertHelix';
-pathName = 'sine';
+pathName = 'vertHelix';
+% pathName = 'sine';
 % pathName = 'horHelix';
 
 %% Load Data
@@ -30,12 +30,12 @@ end
 switch robot
     case 'husky'
         results = load("husky_ur5e_results_full.mat");
-        % motorStates = getHuskyMotorFromVel(results.states.base.x(:,path),results.states.base.omega(:,path));
-        motorStates = zeros([4,200]);
+        motorStates = getHuskyMotorFromVel(results.states.base.x(:,path),results.states.base.omega(:,path));
+        % motorStates = zeros([4,200]);
     case 'holonomic'
         results = load("husky_ur5e_holo_results_full.mat");
-        % motorStates = getHolonomicMotorFromVel(results.states.base.x(:,path),results.states.base.y(:,path),results.states.base.omega(:,path));
-        motorStates = zeros([4,200]);
+        motorStates = getHolonomicMotorFromVel(results.states.base.x(:,path),results.states.base.y(:,path),results.states.base.omega(:,path));
+        %motorStates = zeros([4,200]);
     otherwise
         printf('Joint values not calculated')
         quit(0)
@@ -67,7 +67,7 @@ switch robot
         motorNames = ["./front_left_wheel"; "./front_right_wheel";"./rear_right_wheel"; "./rear_left_wheel"];
     case 'holonomic'
         % --------------------- TODO ------------------------ %
-        % motorNames = [];
+        motorNames = ["./link[0]/regularRotation"; "./link[1]/regularRotation"; "./link[2]/regularRotation"; "./link[3]/regularRotation"];
     otherwise
         printf('Robot not modeled')
         quit(0)

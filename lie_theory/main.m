@@ -14,16 +14,31 @@ addpath(genpath(fileparts('../github_repo/')))
 % other files or code unless for plotting and visualization.
 
 % Load robot file here with screws and dof fully defined
-husky_ur5e;
-% husky_ur5e_holo;
+% robot = 'husky';
+robot = 'holo';
+switch robot
+    case 'husky'
+        husky_ur5e;
+    case 'holo'
+        husky_ur5e_holo;
+    otherwise
+        printf('Robot model does not exist')
+        quit(0)
+end
 dt = 0.1; % Time step for the duration <second, R^1>
 time = 20; % Simulated duration of the experiment (does not match realtime) <seconds, R^1>
 num_paths = 3; % 1-3 to run up to the first 3 paths <unitless, R^1>
 lambda_e = 25*[1,1,1,1,1,1]'; % Weights for error in screw vector [rx,ry,rz,x,y,z]' <unitless, R^6>
 lambda_j = 0.001; % Weight for jerk <unitless, R^1>
-% lambda_v = 10*[0.1,0.1,0.025,0.025,0.01,0.01,0.01,0.01]'; % Must match the number of screws and dof (n) and be in the same order <unitless, R^n>
-lambda_v = 10*[0.1,0.1,0.1,0.025,0.025,0.01,0.01,0.01,0.01]'; % Must match the number of screws and dof (n) and be in the same order <unitless, R^n>
-
+switch robot
+    case 'husky'
+        lambda_v = 10*[0.1,0.1,0.025,0.025,0.01,0.01,0.01,0.01]'; % Must match the number of screws and dof (n) and be in the same order <unitless, R^n>
+    case 'holo'
+        lambda_v = 10*[0.1,0.1,0.1,0.025,0.025,0.01,0.01,0.01,0.01]'; % Must match the number of screws and dof (n) and be in the same order <unitless, R^n>
+    otherwise
+        printf('Robot model does not exist')
+        quit(0)
+end
 
 %% Parameters definition
 parameters.screws = screws;
@@ -120,7 +135,7 @@ linewidth = 2; % 2
 fontsize = 16; % 20
 labelsize = 20; % 28
 titlesize = 32; % 40
-save = true;
+save = false;
 time = seconds(0:parameters.dt:parameters.time-parameters.dt);
 
 %% Plot paths
@@ -342,8 +357,15 @@ plot_error
 %% Plot base linear states
 
 % plot_base_linear
-plot_base_nh
-% plot_base_h
+switch robot
+    case 'husky'
+        plot_base_nh
+    case 'holo'
+        plot_base_h
+    otherwise
+        printf('Robot model does not exist')
+        quit(0)
+end
 
 % % figure('units','normalized','outerposition',[0 0 1 1])
 % % 
@@ -537,8 +559,17 @@ table_parameters
 % % parameters.lambda_j
 
 %% Table metrics
-table_metrics_nh
-% table_metrics_h
+
+switch robot
+    case 'husky'
+        table_metrics_nh
+    case 'holo'
+        table_metrics_h
+otherwise
+        printf('Robot model does not exist')
+        quit(0)
+end
+
 % % comp_time = mean(timer);
 % % max_lin_vel = max(states.base.xtable.Var1);
 % % max_ang_vel = max(states.base.omegatable.Var1);
