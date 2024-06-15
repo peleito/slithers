@@ -16,22 +16,14 @@ S2_w = [0,0,0]; % base linear
 S2_v = [1,0,0];
 S2 = [S2_w,S2_v];
 
-% % Sc_w = [0,0,1];
-% % Sc_v = [5,0,0];
-% % Sc = [Sc_w, Sc_v];
-
-
 parameters.screws = [S1; % base angular velocity
                      S2]; % base linear velocity screw joints for mobile manipulator (n rows of [omegax,omegay,omegaz,x,y,z])
-% % parameters.screws = [Sc];
 %% Parameters definition
 parameters.config_state = [1,0,0,0;
                            0,1,0,0;
                            0,0,1,0;
                            0,0,0,1]; % zero state pose for mobile manipulator (se3 matrix, pose at q = [0])
 parameters.adjoint = eye(6); % adjoint matrix for mobile manipulator (se3 matrix, current pose)
-% % parameters.stateMin = [-100,-1000]';
-% % parameters.stateMax = [100,1000]';
 parameters.stateMin = [-100,-100]';
 parameters.stateMax = [100,100]';
 parameters.dt = 1;

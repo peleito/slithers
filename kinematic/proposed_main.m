@@ -34,6 +34,7 @@ B = [0 0 0;
      0 dt/Il1 0;
      0 0 dt/Il2];
 
+%% Pick the path to test here (uncomment the desired path)
 %% crescent
 % str = 'cresent';
 % t = linspace(-pi/2,pi/2,100);

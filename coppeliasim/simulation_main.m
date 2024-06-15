@@ -6,9 +6,11 @@ addpath('..\lie_theory\');
 
 %% Define paramters
 
+% Select the robot to test
 robot = 'husky';
 % robot = 'holonomic';
 
+% Select the path to test
 pathName = 'vertHelix';
 % pathName = 'sine';
 % pathName = 'horHelix';
@@ -29,13 +31,11 @@ end
 
 switch robot
     case 'husky'
-        results = load("husky_ur5e_results_full.mat");
+        results = load("husky_ur5e_results_full.mat"); % Load matlab results here for open loop simulation
         motorStates = getHuskyMotorFromVel(results.states.base.x(:,path),results.states.base.omega(:,path));
-        % motorStates = zeros([4,200]);
     case 'holonomic'
-        results = load("husky_ur5e_holo_results_full.mat");
+        results = load("husky_ur5e_holo_results_full.mat"); % Load matlab results here for open loop simulation
         motorStates = getHolonomicMotorFromVel(results.states.base.x(:,path),results.states.base.y(:,path),results.states.base.omega(:,path));
-        %motorStates = zeros([4,200]);
     otherwise
         printf('Joint values not calculated')
         quit(0)
@@ -97,15 +97,6 @@ for i = 1:length(jointStates)
 
     setArmJointPositions(vrep,clientID,jointHandles, currentJoint);
     setArmMotorVelocities(vrep,clientID, motorHandles, currentMotor);
-	% vrep.simxSetJointTargetVelocity(clientID, motorHandles(1), 1, vrep.simx_opmode_oneshot);
-    % [err2,v]=vrep.simxGetJointPosition(clientID, jointHandles(2), vrep.simx_opmode_streaming);
-	% while true
-	%    [err2,v]=vrep.simxGetJointPosition(clientID, jointHandles(2), vrep.simx_opmode_buffer);
-    %    val = abs(v+20*pi/180)<0.1*pi/180;
-	%    if(abs(v+20*pi/180)<0.1*pi/180)
-		% 	break
-	%    end;
-	% end;
 	
     waitfor(rateObj);
 end

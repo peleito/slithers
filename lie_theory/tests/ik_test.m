@@ -59,7 +59,6 @@ parameters.config_state = [-1,0,0,0.817+Lbx;
                            0,0,1,0.233+Lby;
                            0,1,0,0.063+Lbz;
                            0,0,0,1]; % zero state pose for mobile manipulator (se3 matrix, pose at q = [0])
-% parameters.adjoint = eye(6); % adjoint matrix for mobile manipulator (se3 matrix, current pose)
 parameters.stateMin = [-100,-100,-pi,-pi,-pi,-pi,-pi,-pi]';
 parameters.stateMax = [100,100,pi,pi,pi,pi,pi,pi]';
 parameters.dt = 0.1;
@@ -96,7 +95,7 @@ tool_sub = rossubscriber("/ground_truth/ur_arm_tool0","DataFormat","struct"); % 
 husky_pub = rospublisher("/husky_velocity_controller/cmd_vel","geometry_msgs/Twist","DataFormat","struct");
 arm_pub = rospublisher("/pos_joint_traj_controller/command","trajectory_msgs/JointTrajectory","DataFormat","struct");
 
-% pause(5);
+
 
 r = rosrate(1);
 
@@ -105,11 +104,8 @@ x = zeros([8,1]);
 xdot = zeros([8,1]);
 
 arm_received = receive(arm_sub,10);
-% a = 1
 base_state = receive(base_sub,10);
-% a = 2
 
-% pause(5);
 %% Main
 
 for plot_step = 1:parameters.steps
@@ -131,18 +127,7 @@ for plot_step = 1:parameters.steps
     % get next pose goal
     ee_desired = tform(pose_goals(plot_step));
 
-    % set adjoint matrix from current base pose
-%     parameters.adjoint = zeros([6,6]);
     rotation = rotvec2mat3d(orientation);
-%     pos_skew = [0,-pos(3),pos(2);
-%                 pos(3),0,-pos(1);
-%                 -pos(2),pos(1),0];
-%     parameters.adjoint(1:3,1:3) = rotation;
-%     parameters.adjoint(1:3,4:6) = cross(pos_skew,rotation);
-%     parameters.adjoint(4:6,4:6) = rotation;
-
-%     parameters.adjoint = eye(6);
-    
     parameters.base_pose = eye(4);
     parameters.base_pose(1:3,1:3) = rotation;
     parameters.base_pose(1:3,4) = pos;
@@ -209,64 +194,3 @@ for plot_step = 1:parameters.steps
     waitfor(r);
 %     pause()
 end
-
-%% Plot
-% pause(1)
-
-% %% Plot desired vs actual
-% figure
-% plot(ee_desired(1,:),ee_desired(2,:),end_effector_pose(1,:),end_effector_pose(2,:))
-% pause(1)
-% 
-% %% RMSE
-% residuals = ee_desired-end_effector_pose;
-% rmse = sqrt(mean(residuals.^2,"all"));
-% mean_time = mean(timer);
-% 
-% %% Remove first point
-% x = x(2:end);
-% theta1 = theta1(2:end);
-% theta2 = theta2(2:end);
-% 
-% %% Velocity
-% time = linspace(0,step_size*dt,step_size);
-% 
-% dx = diff(x);
-% dtheta1 = diff(theta1);
-% dtheta2 = diff(theta2);
-% 
-% dxdt = dx/dt;
-% dtheta1dt = dtheta1/dt;
-% dtheta2dt = dtheta2/dt;
-% 
-% max_vel = [max(abs(dxdt)) max([abs(dtheta1dt) abs(dtheta2dt)])];
-% 
-% %% Acceleration
-% dx2 = diff(dxdt);
-% dtheta12 = diff(dtheta1dt);
-% dtheta22 = diff(dtheta2dt);
-% 
-% dx2dt2 = dx2/dt;
-% dtheta12dt2 = dtheta12/dt;
-% dtheta22dt2 = dtheta22/dt;
-% 
-% max_acc = [max(abs(dx2dt2)) max([abs(dtheta12dt2) abs(dtheta22dt2)])];
-% 
-% %% Jerk
-% dx3 = diff(dx2dt2);
-% dtheta13 = diff(dtheta12dt2);
-% dtheta23 = diff(dtheta22dt2);
-% 
-% dx3dt3 = dx3/dt;
-% dtheta13dt3 = dtheta13/dt;
-% dtheta23dt3 = dtheta23/dt;
-% 
-% max_jer = [max(abs(dx3dt3)) max([abs(dtheta13dt3) abs(dtheta23dt3)])];
-% 
-% %% Metrics
-% str
-% rmse
-% mean_time
-% max_vel
-% max_acc
-% max_jer

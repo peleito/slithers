@@ -34,42 +34,43 @@ B = [0 0 0;
      0 dt/Il1 0;
      0 0 dt/Il2];
 
+%% Pick the path to test here (uncomment the desired path)
 %% crescent
-str = 'cresent';
-t = linspace(-pi/2,pi/2,100);
-x_desired1 = 4*cos(t+pi)+2;
-y_desired1 = 0.25*sin(t+pi)+1.7;
-x_desired2 = 2*cos(t+pi)+2;
-y_desired2 = 0.25*sin(t+pi)+1.7;
-x_desired = [x_desired1 flip(x_desired2)];
-y_desired = [y_desired1 flip(y_desired2)];
+% str = 'cresent';
+% t = linspace(-pi/2,pi/2,100);
+% x_desired1 = 4*cos(t+pi)+2;
+% y_desired1 = 0.25*sin(t+pi)+1.7;
+% x_desired2 = 2*cos(t+pi)+2;
+% y_desired2 = 0.25*sin(t+pi)+1.7;
+% x_desired = [x_desired1 flip(x_desired2)];
+% y_desired = [y_desired1 flip(y_desired2)];
 
-ee_desired = [x_desired;
-              y_desired];
-figure('units','normalized','outerposition',[0 0 1 1])
-subplot(1,3,3)
-plot(ee_desired(1,:),ee_desired(2,:),'LineWidth',2)
-set(gca,'fontsize',24)
-xlabel('x (meters)','FontSize',40,'Interpreter','latex')
-ylabel('y (meters)','FontSize',40,'Interpreter','latex')
-axis square
-title('Crescent','FontSize',48,'Interpreter','latex')
+% ee_desired = [x_desired;
+%               y_desired];
+% figure('units','normalized','outerposition',[0 0 1 1])
+% subplot(1,3,3)
+% plot(ee_desired(1,:),ee_desired(2,:),'LineWidth',2)
+% set(gca,'fontsize',24)
+% xlabel('x (meters)','FontSize',40,'Interpreter','latex')
+% ylabel('y (meters)','FontSize',40,'Interpreter','latex')
+% axis square
+% title('Crescent','FontSize',48,'Interpreter','latex')
 
 %% heart
-str = 'heart';
-t = linspace(-pi,pi,100);
-x_desired = sin(t).^3;
-y_desired = (13*cos(t)-5*cos(2*t)-2*cos(3*t)-cos(4*t))/32+1.5;
+% str = 'heart';
+% t = linspace(-pi,pi,100);
+% x_desired = sin(t).^3;
+% y_desired = (13*cos(t)-5*cos(2*t)-2*cos(3*t)-cos(4*t))/32+1.5;
 
-ee_desired = [x_desired;
-              y_desired];
-subplot(1,3,2)
-plot(ee_desired(1,:),ee_desired(2,:),'LineWidth',2)
-set(gca,'fontsize',24)
-xlabel('x (meters)','FontSize',40,'Interpreter','latex')
-ylabel('y (meters)','FontSize',40,'Interpreter','latex')
-axis square
-title('Heart','FontSize',48,'Interpreter','latex')
+% ee_desired = [x_desired;
+%               y_desired];
+% subplot(1,3,2)
+% plot(ee_desired(1,:),ee_desired(2,:),'LineWidth',2)
+% set(gca,'fontsize',24)
+% xlabel('x (meters)','FontSize',40,'Interpreter','latex')
+% ylabel('y (meters)','FontSize',40,'Interpreter','latex')
+% axis square
+% title('Heart','FontSize',48,'Interpreter','latex')
 
 %% sine wave
 str = 'sine';
@@ -78,13 +79,13 @@ y_desired = 1/4*sin(8*x_desired)+2;
 
 ee_desired = [x_desired;
               y_desired];
-subplot(1,3,1)
-plot(ee_desired(1,:),ee_desired(2,:),'LineWidth',2)
-set(gca,'fontsize',24)
-xlabel('x (meters)','FontSize',40,'Interpreter','latex')
-ylabel('y (meters)','FontSize',40,'Interpreter','latex')
-axis square
-title('Sine Wave','FontSize',48,'Interpreter','latex')
+% subplot(1,3,1)
+% plot(ee_desired(1,:),ee_desired(2,:),'LineWidth',2)
+% set(gca,'fontsize',24)
+% xlabel('x (meters)','FontSize',40,'Interpreter','latex')
+% ylabel('y (meters)','FontSize',40,'Interpreter','latex')
+% axis square
+% title('Sine Wave','FontSize',48,'Interpreter','latex')
 
 % export_fig test_paths.png -transparent -native
 
