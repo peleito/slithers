@@ -250,55 +250,55 @@ Lie theory is useful to model manipulator kinematics and dynamics due to is gene
 ### Screw Coordinates
 
 A twist, $\mathbf{S} \in \mathbb{R}^6$, is a screw composed of two three dimensional vectors, the rotational and translational motion about an axis, as given by
-$$
+```math
 \begin{equation}
     \mathbf{S} =    \begin{Bmatrix}
                         \boldsymbol{\omega} \\
                         \mathbf{v} + \mathbf{d} \times \boldsymbol{\omega}
                         \end{Bmatrix} 
 \end{equation}
-$$
+```
 where $\boldsymbol{\omega} \in \mathbb{R}^3$ is the angular motion, $\mathbf{v} \in \mathbb{R}^3$ is the linear motion, and $\mathbf{d} \in \mathbb{R}^3$ is a translation from the reference frame to the joint. 
 In a revolute joint ($\mathbf{v}=\mathbf{0}$), the twist element, $\mathbf{S}_{\omega}$, is defined by rotational motion and translational vectors as given by 
-$$
+```math
 \begin{equation}
     \mathbf{S}_{\omega} =    \begin{Bmatrix}
                         \boldsymbol{\omega} \\
                         \mathbf{d} \times \boldsymbol{\omega}
                         \end{Bmatrix} 
 \end{equation}
-$$
+```
 A prismatic joint ($\boldsymbol{\omega}=\mathbf{0}$) has a twist element, $\mathbf{S}_{v}$, defined by the linear motion vector as given by
-$$
+```math
 \begin{equation}
     \mathbf{S}_{v} =    \begin{Bmatrix}
                         \mathbf{0} \\
                         \mathbf{v}
                         \end{Bmatrix} 
 \end{equation}
-$$
+```
 The defined screw coordinates can then be used to compute the forward and inverse kinematics from the fundamentals of Lie theory using the product of exponentials. 
 
 ### Lie Groups and Lie Algebra
 
 In the case of a three dimensional rigid body transformation, $[\mathbf{P}] \in SE(3)$, any element in the Lie group can be defined by a rotation matrix, $[\mathbf{R}]$, and translation vector, $\mathbf{t}$, as given by
-$$
+```math
 \begin{equation}
     [\mathbf{P}] = \begin{bmatrix}
 [\mathbf{R}] & \mathbf{t} \\
 \mathbf{0} & 1
 \end{bmatrix} 
 \end{equation}
-$$
+```
 The Lie algebra, $[\mathbf{S}]^{\wedge} \in \mathfrak{se}(3)$, for a homogeneous transformation is defined by the twist governing the motion and given by
-$$
+```math
 \begin{equation}
     [\mathbf{S}]^{\wedge} = \begin{bmatrix}
 [\boldsymbol{\omega}]_{\times} & \mathbf{v} + \mathbf{d} \times \boldsymbol{\omega} \\
 \mathbf{0} & 0
 \end{bmatrix} 
 \end{equation}
-$$
+```
 where $[\cdot]_{\times}$ indicates a skew symmetric matrix.
 
 The matrix exponential is used to map $[\mathbf{S}(q)]^{\wedge}$ onto the $SE(3)$ manifold changing the pose from $[\mathbf{P}_{0}]$ to $[\mathbf{P}]$ as given by
