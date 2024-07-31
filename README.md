@@ -302,18 +302,18 @@ The Lie algebra, $[\mathbf{S}]^{\wedge} \in \mathfrak{se}(3)$, for a homogeneous
 where $[\cdot]_{\times}$ indicates a skew symmetric matrix.
 
 The matrix exponential is used to map $[\mathbf{S}(q)]^{\wedge}$ onto the $SE(3)$ manifold changing the pose from $[\mathbf{P}_{0}]$ to $[\mathbf{P}]$ as given by
-$$
+```math
 \begin{equation}
     [\mathbf{P}] = e^{[\mathbf{S(q)}]^{\wedge}} [\mathbf{P}_{0}] 
 \end{equation}
-$$
+```
 where $[\mathbf{P}_{0}]$ is the configuration state at the identity and $S$ is a function of $q$, the joint state.
 For a manipulator, the product of exponentials is used to solve for the forward kinematics as given by
-$$
+```math
 \begin{equation}
     [\textbf{P}_{n}^{0}] = \prod_{i \in n} \left( e^{[\mathbf{S}_{i}(q_{i})]^{\wedge}} \right) [\mathbf{P}_{0}] 
 \end{equation}
-$$
+```
 where $n$ is the number of links in the robotic system. 
 
 ### Derivations of Forward Kinematics
@@ -326,7 +326,7 @@ where $n$ is the number of links in the robotic system.
     <figcaption>Diagram of differential drive robot frame, $B$, located in the world frame, $W$, with states, $x,\ y,\ \mathrm{and}\ \phi$, and control inputs, $v\ \mathrm{and}\ \omega$.</figcaption>
 </figure>
 
-$$
+```math
 \begin{equation}
     \boldsymbol{\omega} = \begin{Bmatrix}
                     0 \\
@@ -344,9 +344,9 @@ $$
                     0
                     \end{Bmatrix} \\
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
     \mathbf{S} = \begin{Bmatrix}
                     0 \\
@@ -357,9 +357,9 @@ $$
                     0
                     \end{Bmatrix}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
     [\mathbf{S}]^{\wedge} = \begin{bmatrix}
                             0 & -\omega & 0 & v \\
@@ -368,9 +368,9 @@ $$
                             0 & 0 & 0 & 0
                             \end{bmatrix}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
     [\Delta\mathbf{P}^{B}_{B,k}] = \begin{bmatrix}
                             \cos{\omega_k} & -\sin{\omega_k} & 0 & \frac{v_k}{\omega_k}\sin{\omega_k} \\
@@ -379,9 +379,9 @@ $$
                             0 & 0 & 0 & 1
                             \end{bmatrix} dt
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
     [\mathbf{P}^{B}_{0}] = \begin{bmatrix}
                             1 & 0 & 0 & 0 \\
@@ -390,13 +390,13 @@ $$
                             0 & 0 & 0 & 1
                             \end{bmatrix}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
     [\mathbf{P}^{W}_{B,k+1}] = [\mathbf{P}^{W}_{B,k}][\Delta\mathbf{P}^{B}_{B,k}][\mathbf{P}^{B}_{0}]
 \end{equation}
-$$
+```
 
 ### Mecanum  Drive Mobile Robot
 
@@ -406,7 +406,7 @@ $$
     <figcaption>Diagram of mecanum drive robot frame, $B$, located in the world frame, $W$, with states, $x,\ y,\ \mathrm{and}\ \phi$, and control inputs, $v_{x},\ v_{y},\ \mathrm{and}\ \omega$.</figcaption>
 </figure>
 
-$$
+```math
 \begin{equation}
     \boldsymbol{\omega} = \begin{Bmatrix}
                     0 \\
@@ -424,9 +424,9 @@ $$
                     0
                     \end{Bmatrix} \\
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
     \mathbf{S} = \begin{Bmatrix}
                     0 \\
@@ -437,9 +437,9 @@ $$
                     0
                     \end{Bmatrix}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
     [\mathbf{S}]^{\wedge} = \begin{bmatrix}
                             0 & -\omega & 0 & v_{x} \\
@@ -448,9 +448,9 @@ $$
                             0 & 0 & 0 & 0
                             \end{bmatrix}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
     [\Delta\mathbf{P}^{B}_{B,k}] = \begin{bmatrix}
                             \cos{\omega_k} & -\sin{\omega_k} & 0 & \frac{v_{x,k}\sin{\omega_k}+v_{y,k}\left(\cos{\omega_k}-1\right)}{\omega_k} \\
@@ -459,9 +459,9 @@ $$
                             0 & 0 & 0 & 1
                             \end{bmatrix} dt
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
     [\mathbf{P}^{B}_{0}] = \begin{bmatrix}
                             1 & 0 & 0 & 0 \\
@@ -470,13 +470,13 @@ $$
                             0 & 0 & 0 & 1
                             \end{bmatrix}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
     [\mathbf{P}^{W}_{B,k+1}] = [\mathbf{P}^{W}_{B,k}][\Delta\mathbf{P}^{B}_{B,k}][\mathbf{P}^{B}_{0}]
 \end{equation}
-$$
+```
 
 #### Industrial Robotic Manipulator
 
@@ -486,7 +486,7 @@ $$
     <figcaption>Diagram of Universal Robot UR5 with base frame, $B$, and end effector frame, $E$, in the zero position. Screw coordinates, $S_{i}\ \forall i \in n$, and joint angles, $\theta_{i}\ \forall i \in n$, are used to define kinematic model of the six link manipulator, $n=6$.</figcaption>
 </figure>
 
-$$
+```math
 \begin{equation}
 \begin{aligned}
     \boldsymbol{\omega}_{1} &= \begin{Bmatrix}
@@ -581,9 +581,9 @@ $$
                     \end{Bmatrix} 
 \end{aligned}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
 \begin{aligned}
     \mathbf{S}_{1} &= \begin{Bmatrix}
@@ -636,9 +636,9 @@ $$
                     \end{Bmatrix}^{\top} \theta_{6}
 \end{aligned}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
 \begin{aligned}
     [\mathbf{S}_{{1}}]^{\wedge} &= \begin{bmatrix}
@@ -679,9 +679,9 @@ $$
                             \end{bmatrix} \theta_{6} 
 \end{aligned}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
 \begin{aligned}
     e^{[\mathbf{S}_{{1}}]^{\wedge}} &= \begin{bmatrix}
@@ -722,9 +722,9 @@ $$
                             \end{bmatrix} 
 \end{aligned}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
     [\mathbf{P}^{B}_{0}] = \begin{bmatrix}
                             1 & 0 & 0 & -L_{1}-L_{2} \\
@@ -733,13 +733,13 @@ $$
                             0 & 0 & 0 & 1
                             \end{bmatrix}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
     [\mathbf{P}^{B}_{6}] = e^{[\mathbf{S}_{{1}}]^{\wedge}}e^{[\mathbf{S}_{{2}}]^{\wedge}}e^{[\mathbf{S}_{{3}}]^{\wedge}}e^{[\mathbf{S}_{{4}}]^{\wedge}}e^{[\mathbf{S}_{{5}}]^{\wedge}}e^{[\mathbf{S}_{{6}}]^{\wedge}}[\mathbf{P}^{B}_{0}]
 \end{equation}
-$$
+```
 
 #### Mobile Manipulator with Non-Holonomic Mobile Base
 
@@ -749,7 +749,7 @@ $$
     <figcaption>Mobile manipulator consisting of a six degree of freedom industrial robotic manipulator (Universal Robots UR5e) mounted on a non-holonomic mobile platform (Clearpath Robotics Husky).</figcaption>
 </figure>
 
-$$
+```math
 \begin{equation}
 \begin{aligned}
     \boldsymbol{\omega}_{b} &= \begin{Bmatrix}
@@ -859,9 +859,9 @@ $$
                     \end{Bmatrix} 
 \end{aligned}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
 \begin{aligned}
     \mathbf{S}_{b} &= \begin{Bmatrix}
@@ -922,9 +922,9 @@ $$
                     \end{Bmatrix}^{\top} \theta_{6}
 \end{aligned}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
 \begin{aligned}
     [\mathbf{S}_{{b}}]^{\wedge} &= \begin{bmatrix}
@@ -971,9 +971,9 @@ $$
                             \end{bmatrix} \theta_{6} 
 \end{aligned}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
 \begin{aligned}
     [\Delta\mathbf{P}^{B}_{B,k}] &= \begin{bmatrix}
@@ -1020,9 +1020,9 @@ $$
                             \end{bmatrix} 
 \end{aligned}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
     [\mathbf{P}^{B}_{0}] = \begin{bmatrix}
                             1 & 0 & 0 & -L_{1}-L_{2} \\
@@ -1031,13 +1031,13 @@ $$
                             0 & 0 & 0 & 1
                             \end{bmatrix}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
     [\mathbf{P}^{W}_{E,k+1}] = [\mathbf{P}^{W}_{B,k}][\Delta\mathbf{P}^{B}_{B,k}]e^{[\mathbf{S}_{{1,k}}]^{\wedge}}e^{[\mathbf{S}_{{2,k}}]^{\wedge}}e^{[\mathbf{S}_{{3,k}}]^{\wedge}}e^{[\mathbf{S}_{{4,k}}]^{\wedge}}e^{[\mathbf{S}_{{5,k}}]^{\wedge}}e^{[\mathbf{S}_{{6,k}}]^{\wedge}}[\mathbf{P}^{B}_{0}]
 \end{equation}
-$$
+```
 
 #### Mobile Manipulator with Holonomic Mobile Base
 
@@ -1047,7 +1047,7 @@ $$
     <figcaption>Mobile manipulator consisting of a six degree of freedom industrial robotic manipulator (Universal Robots UR5e) mounted on a holonomic mobile platform.</figcaption>
 </figure>
 
-$$
+```math
 \begin{equation}
 \begin{aligned}
     \boldsymbol{\omega}_{b} &= \begin{Bmatrix}
@@ -1157,9 +1157,9 @@ $$
                     \end{Bmatrix} 
 \end{aligned}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
 \begin{aligned}
     \mathbf{S}_{b} &= \begin{Bmatrix}
@@ -1220,9 +1220,9 @@ $$
                     \end{Bmatrix}^{\top} \theta_{6}
 \end{aligned}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
 \begin{aligned}
     [\mathbf{S}_{{b}}]^{\wedge} &= \begin{bmatrix}
@@ -1269,9 +1269,9 @@ $$
                             \end{bmatrix} \theta_{6} 
 \end{aligned}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
 \begin{aligned}
     [\Delta\mathbf{P}^{B}_{B,k}] &= \begin{bmatrix}
@@ -1318,9 +1318,9 @@ $$
                             \end{bmatrix} 
 \end{aligned}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
     [\mathbf{P}^{B}_{0}] = \begin{bmatrix}
                             1 & 0 & 0 & -L_{1}-L_{2} \\
@@ -1329,10 +1329,10 @@ $$
                             0 & 0 & 0 & 1
                             \end{bmatrix}
 \end{equation}
-$$
+```
 
-$$
+```math
 \begin{equation}
     [\mathbf{P}^{W}_{E,k+1}] = [\mathbf{P}^{W}_{B,k}][\Delta\mathbf{P}^{B}_{B,k}]e^{[\mathbf{S}_{{1,k}}]^{\wedge}}e^{[\mathbf{S}_{{2,k}}]^{\wedge}}e^{[\mathbf{S}_{{3,k}}]^{\wedge}}e^{[\mathbf{S}_{{4,k}}]^{\wedge}}e^{[\mathbf{S}_{{5,k}}]^{\wedge}}e^{[\mathbf{S}_{{6,k}}]^{\wedge}}[\mathbf{P}^{B}_{0}]
 \end{equation}
-$$
+```
