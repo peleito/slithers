@@ -250,14 +250,14 @@ Lie theory is useful to model manipulator kinematics and dynamics due to is gene
 ### Screw Coordinates
 
 A twist, $\mathbf{S} \in \mathbb{R}^6$, is a screw composed of two three dimensional vectors, the rotational and translational motion about an axis, as given by
-$$
+```math
 \begin{equation}
     \mathbf{S} =    \begin{Bmatrix}
                         \boldsymbol{\omega} \\
                         \mathbf{v} + \mathbf{d} \times \boldsymbol{\omega}
                         \end{Bmatrix} 
 \end{equation}
-$$
+```
 where $\boldsymbol{\omega} \in \mathbb{R}^3$ is the angular motion, $\mathbf{v} \in \mathbb{R}^3$ is the linear motion, and $\mathbf{d} \in \mathbb{R}^3$ is a translation from the reference frame to the joint. 
 In a revolute joint ($\mathbf{v}=\mathbf{0}$), the twist element, $\mathbf{S}_{\omega}$, is defined by rotational motion and translational vectors as given by 
 $$
