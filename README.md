@@ -641,7 +641,7 @@ where $n$ is the number of links in the robotic system.
 ```math
 \begin{equation}
 \begin{aligned}
-    [\mathbf{S}_{{1}}]^{\wedge} &= \begin{bmatrix}
+   \\ [\mathbf{S}_{{1}}]^{\wedge} &= \begin{bmatrix}
                             0 & -1 & 0 & 0 \\
                             1 & 0 & 0 & 0 \\
                             0 & 0 & 0 & 0 \\
@@ -690,30 +690,60 @@ where $n$ is the number of links in the robotic system.
                             0 & 0 & 1 & 0 \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     e^{[\mathbf{S}_{{2}}]^{\wedge}} &= \begin{bmatrix}
                             \cos{\theta_{2}} & 0 & \sin{\theta_{2}} & H_{1}\sin{\theta_{2}} \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{2}} & 0 & \cos{\theta_{2}} & H_{1}\left(\cos{\theta_{2}}-1\right) \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     e^{[\mathbf{S}_{{3}}]^{\wedge}} &= \begin{bmatrix}
                             \cos{\theta_{3}} & 0 & \sin{\theta_{3}} & H_{1}\sin{\theta_{3}} + L_{1}\left(1-\cos{\theta_{3}}\right) \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{3}} & 0 & \cos{\theta_{3}} & H_{1}\left(\cos{\theta_{3}}-1\right) + L_{1}\sin{\theta_{3}} \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     e^{[\mathbf{S}_{{4}}]^{\wedge}} &= \begin{bmatrix}
                             \cos{\theta_{4}} & 0 & \sin{\theta_{4}} & H_{1}\sin{\theta_{4}} + \left(L_{1}+L_{2}\right)\left(1-\cos{\theta_{4}}\right) \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{4}} & 0 & \cos{\theta_{4}} & H_{1}\left(\cos{\theta_{4}}-1\right) + \left(L_{1}+L_{2}\right)\sin{\theta_{4}} \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     e^{[\mathbf{S}_{{5}}]^{\wedge}} &= \begin{bmatrix}
                             \cos{\theta_{5}} & -\sin{\theta_{5}} & 0 & W_{1}\sin{\theta_{5}}-\left(L_{1}+L_{2}\right)\left(\cos{\theta_{5}}-1\right) \\
                             \sin{\theta_{5}} & \cos{\theta_{5}} & 0 & W_{1}\left(1-\cos{\theta_{5}}\right)-\left(L_{1}+L_{2}\right)\sin{\theta_{5}} \\
                             0 & 0 & 1 & 0 \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     e^{[\mathbf{S}_{{6}}]^{\wedge}} &= \begin{bmatrix}
                             \cos{\theta_{6}} & 0 & \sin{\theta_{6}} & \left(H_{1}-H_{2}\right)\sin{\theta_{6}} + \left(L_{1}+L_{2}\right)\left(1-\cos{\theta_{6}}\right) \\
                             0 & 1 & 0 & 0 \\
@@ -756,77 +786,107 @@ where $n$ is the number of links in the robotic system.
                     0 \\
                     0 \\
                     \omega
-                    \end{Bmatrix} , 
+                    \end{Bmatrix} ,
     & \mathbf{v}_{b} &= \begin{Bmatrix}
                     v \\
                     0 \\
                     0
-                    \end{Bmatrix} , 
+                    \end{Bmatrix} ,
     & \mathbf{d}_{b} &= \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix}  \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     \boldsymbol{\omega}_{1} &= \begin{Bmatrix}
                     0 \\
                     0 \\
                     \theta_{1}
-                    \end{Bmatrix} , 
+                    \end{Bmatrix} ,
     & \mathbf{v}_{1} &= \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
-                    \end{Bmatrix} , 
+                    \end{Bmatrix} ,
     & \mathbf{d}_{1} &= \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix}  \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     \boldsymbol{\omega}_{2} &= \begin{Bmatrix}
                     0 \\
                     -\theta_{2} \\
                     0
-                    \end{Bmatrix} , 
+                    \end{Bmatrix} ,
     & \mathbf{v}_{2} &= \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
-                    \end{Bmatrix} , 
+                    \end{Bmatrix} ,
     & \mathbf{d}_{2} &= \begin{Bmatrix}
                     0 \\
                     0 \\
                     H_{1}
                     \end{Bmatrix}  \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     \boldsymbol{\omega}_{3} &= \begin{Bmatrix}
                     0 \\
                     -\theta_{3} \\
                     0
-                    \end{Bmatrix} , 
+                    \end{Bmatrix} ,
     & \mathbf{v}_{3} &= \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
-                    \end{Bmatrix} , 
+                    \end{Bmatrix} ,
     & \mathbf{d}_{3} &= \begin{Bmatrix}
                     -L_{1} \\
                     0 \\
                     H_{1}
                     \end{Bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     \boldsymbol{\omega}_{4} &= \begin{Bmatrix}
                     0 \\
                     -\theta_{4} \\
                     0
-                    \end{Bmatrix} , 
+                    \end{Bmatrix} ,
     & \mathbf{v}_{4} &= \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
-                    \end{Bmatrix} , 
+                    \end{Bmatrix} ,
     & \mathbf{d}_{4} &= \begin{Bmatrix}
                     -L_{1}-L_{2} \\
                     0 \\
                     H_{1}
                     \end{Bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     \boldsymbol{\omega}_{5} &= \begin{Bmatrix}
                     0 \\
                     0 \\
@@ -842,6 +902,12 @@ where $n$ is the number of links in the robotic system.
                     -W_{1} \\
                     0
                     \end{Bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     \boldsymbol{\omega}_{6} &= \begin{Bmatrix}
                     0 \\
                     -\theta_{6} \\
@@ -927,7 +993,7 @@ where $n$ is the number of links in the robotic system.
 ```math
 \begin{equation}
 \begin{aligned}
-    [\mathbf{S}_{{b}}]^{\wedge} &= \begin{bmatrix}
+ \\   [\mathbf{S}_{{b}}]^{\wedge} &= \begin{bmatrix}
                             0 & -\omega & 0 & v \\
                             \omega & 0 & 0 & 0 \\
                             0 & 0 & 0 & 0 \\
@@ -972,46 +1038,81 @@ where $n$ is the number of links in the robotic system.
 \end{aligned}
 \end{equation}
 ```
-
 ```math
 \begin{equation}
 \begin{aligned}
-    [\Delta\mathbf{P}^{B}_{B,k}] &= \begin{bmatrix}
+\\    [\Delta\mathbf{P}^{B}_{B,k}] &= \begin{bmatrix}
                             \cos{\omega_k} & -\sin{\omega_k} & 0 & \frac{v_k}{\omega_k}\sin{\omega_k} \\
                             \sin{\omega_k} & \cos{\omega_k} & 0 & \frac{v_k}{\omega_k}\left(1-\cos{\omega_k}\right) \\
                             0 & 0 & 1 & 0 \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} dt \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     e^{[\mathbf{S}_{{1}}]^{\wedge}} &= \begin{bmatrix}
                             \cos{\theta_{1}} & -\sin{\theta_{1}} & 0 & 0 \\
                             \sin{\theta_{1}} & \cos{\theta_{1}} & 0 & 0 \\
                             0 & 0 & 1 & 0 \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     e^{[\mathbf{S}_{{2}}]^{\wedge}} &= \begin{bmatrix}
                             \cos{\theta_{2}} & 0 & \sin{\theta_{2}} & H_{1}\sin{\theta_{2}} \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{2}} & 0 & \cos{\theta_{2}} & H_{1}\left(\cos{\theta_{2}}-1\right) \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     e^{[\mathbf{S}_{{3}}]^{\wedge}} &= \begin{bmatrix}
                             \cos{\theta_{3}} & 0 & \sin{\theta_{3}} & H_{1}\sin{\theta_{3}} + L_{1}\left(1-\cos{\theta_{3}}\right) \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{3}} & 0 & \cos{\theta_{3}} & H_{1}\left(\cos{\theta_{3}}-1\right) + L_{1}\sin{\theta_{3}} \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     e^{[\mathbf{S}_{{4}}]^{\wedge}} &= \begin{bmatrix}
                             \cos{\theta_{4}} & 0 & \sin{\theta_{4}} & H_{1}\sin{\theta_{4}} + \left(L_{1}+L_{2}\right)\left(1-\cos{\theta_{4}}\right) \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{4}} & 0 & \cos{\theta_{4}} & H_{1}\left(\cos{\theta_{4}}-1\right) + \left(L_{1}+L_{2}\right)\sin{\theta_{4}} \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     e^{[\mathbf{S}_{{5}}]^{\wedge}} &= \begin{bmatrix}
                             \cos{\theta_{5}} & -\sin{\theta_{5}} & 0 & W_{1}\sin{\theta_{5}}-\left(L_{1}+L_{2}\right)\left(\cos{\theta_{5}}-1\right) \\
                             \sin{\theta_{5}} & \cos{\theta_{5}} & 0 & W_{1}\left(1-\cos{\theta_{5}}\right)-\left(L_{1}+L_{2}\right)\sin{\theta_{5}} \\
                             0 & 0 & 1 & 0 \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     e^{[\mathbf{S}_{{6}}]^{\wedge}} &= \begin{bmatrix}
                             \cos{\theta_{6}} & 0 & \sin{\theta_{6}} & \left(H_{1}-H_{2}\right)\sin{\theta_{6}} + \left(L_{1}+L_{2}\right)\left(1-\cos{\theta_{6}}\right) \\
                             0 & 1 & 0 & 0 \\
@@ -1065,6 +1166,12 @@ where $n$ is the number of links in the robotic system.
                     0 \\
                     0
                     \end{Bmatrix}  \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     \boldsymbol{\omega}_{1} &= \begin{Bmatrix}
                     0 \\
                     0 \\
@@ -1080,6 +1187,12 @@ where $n$ is the number of links in the robotic system.
                     0 \\
                     0
                     \end{Bmatrix}  \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     \boldsymbol{\omega}_{2} &= \begin{Bmatrix}
                     0 \\
                     -\theta_{2} \\
@@ -1095,6 +1208,12 @@ where $n$ is the number of links in the robotic system.
                     0 \\
                     H_{1}
                     \end{Bmatrix}  \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     \boldsymbol{\omega}_{3} &= \begin{Bmatrix}
                     0 \\
                     -\theta_{3} \\
@@ -1110,6 +1229,12 @@ where $n$ is the number of links in the robotic system.
                     0 \\
                     H_{1}
                     \end{Bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     \boldsymbol{\omega}_{4} &= \begin{Bmatrix}
                     0 \\
                     -\theta_{4} \\
@@ -1125,6 +1250,12 @@ where $n$ is the number of links in the robotic system.
                     0 \\
                     H_{1}
                     \end{Bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     \boldsymbol{\omega}_{5} &= \begin{Bmatrix}
                     0 \\
                     0 \\
@@ -1140,6 +1271,12 @@ where $n$ is the number of links in the robotic system.
                     -W_{1} \\
                     0
                     \end{Bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     \boldsymbol{\omega}_{6} &= \begin{Bmatrix}
                     0 \\
                     -\theta_{6} \\
@@ -1225,7 +1362,7 @@ where $n$ is the number of links in the robotic system.
 ```math
 \begin{equation}
 \begin{aligned}
-    [\mathbf{S}_{{b}}]^{\wedge} &= \begin{bmatrix}
+\\    [\mathbf{S}_{{b}}]^{\wedge} &= \begin{bmatrix}
                             0 & -\omega & 0 & v_{x} \\
                             \omega & 0 & 0 & v_{y} \\
                             0 & 0 & 0 & 0 \\
@@ -1280,36 +1417,72 @@ where $n$ is the number of links in the robotic system.
                             0 & 0 & 1 & 0 \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} dt \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     e^{[\mathbf{S}_{{1}}]^{\wedge}} &= \begin{bmatrix}
                             \cos{\theta_{1}} & -\sin{\theta_{1}} & 0 & 0 \\
                             \sin{\theta_{1}} & \cos{\theta_{1}} & 0 & 0 \\
                             0 & 0 & 1 & 0 \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     e^{[\mathbf{S}_{{2}}]^{\wedge}} &= \begin{bmatrix}
                             \cos{\theta_{2}} & 0 & \sin{\theta_{2}} & H_{1}\sin{\theta_{2}} \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{2}} & 0 & \cos{\theta_{2}} & H_{1}\left(\cos{\theta_{2}}-1\right) \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     e^{[\mathbf{S}_{{3}}]^{\wedge}} &= \begin{bmatrix}
                             \cos{\theta_{3}} & 0 & \sin{\theta_{3}} & H_{1}\sin{\theta_{3}} + L_{1}\left(1-\cos{\theta_{3}}\right) \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{3}} & 0 & \cos{\theta_{3}} & H_{1}\left(\cos{\theta_{3}}-1\right) + L_{1}\sin{\theta_{3}} \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     e^{[\mathbf{S}_{{4}}]^{\wedge}} &= \begin{bmatrix}
                             \cos{\theta_{4}} & 0 & \sin{\theta_{4}} & H_{1}\sin{\theta_{4}} + \left(L_{1}+L_{2}\right)\left(1-\cos{\theta_{4}}\right) \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{4}} & 0 & \cos{\theta_{4}} & H_{1}\left(\cos{\theta_{4}}-1\right) + \left(L_{1}+L_{2}\right)\sin{\theta_{4}} \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     e^{[\mathbf{S}_{{5}}]^{\wedge}} &= \begin{bmatrix}
                             \cos{\theta_{5}} & -\sin{\theta_{5}} & 0 & W_{1}\sin{\theta_{5}}-\left(L_{1}+L_{2}\right)\left(\cos{\theta_{5}}-1\right) \\
                             \sin{\theta_{5}} & \cos{\theta_{5}} & 0 & W_{1}\left(1-\cos{\theta_{5}}\right)-\left(L_{1}+L_{2}\right)\sin{\theta_{5}} \\
                             0 & 0 & 1 & 0 \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} \\
+\end{aligned}
+\end{equation}
+```
+```math
+\begin{equation}
+\begin{aligned}
     e^{[\mathbf{S}_{{6}}]^{\wedge}} &= \begin{bmatrix}
                             \cos{\theta_{6}} & 0 & \sin{\theta_{6}} & \left(H_{1}-H_{2}\right)\sin{\theta_{6}} + \left(L_{1}+L_{2}\right)\left(1-\cos{\theta_{6}}\right) \\
                             0 & 1 & 0 & 0 \\
