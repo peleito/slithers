@@ -488,145 +488,182 @@ where $n$ is the number of links in the robotic system.
 
 ```math
 \begin{equation}
-\begin{aligned}
-    \boldsymbol{\omega}_{1} &= \begin{Bmatrix}
+    \boldsymbol{\omega}_{1} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     \theta_{1}
                     \end{Bmatrix} , 
-    & \mathbf{v}_{1} &= \begin{Bmatrix}
+    \mathbf{v}_{1} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{d}_{1} &= \begin{Bmatrix}
+    \mathbf{d}_{1} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
-                    \end{Bmatrix}  \\
-    \boldsymbol{\omega}_{2} &= \begin{Bmatrix}
+                    \end{Bmatrix}
+\end{equation}
+```
+```math
+\begin{equation}
+    \boldsymbol{\omega}_{2} = \begin{Bmatrix}
                     0 \\
                     -\theta_{2} \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{v}_{2} &= \begin{Bmatrix}
+    \mathbf{v}_{2} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{d}_{2} &= \begin{Bmatrix}
+    \mathbf{d}_{2} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     H_{1}
-                    \end{Bmatrix}  \\
-    \boldsymbol{\omega}_{3} &= \begin{Bmatrix}
+                    \end{Bmatrix} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \boldsymbol{\omega}_{3} = \begin{Bmatrix}
                     0 \\
                     -\theta_{3} \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{v}_{3} &= \begin{Bmatrix}
+    \mathbf{v}_{3} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{d}_{3} &= \begin{Bmatrix}
+    \mathbf{d}_{3} = \begin{Bmatrix}
                     -L_{1} \\
                     0 \\
                     H_{1}
-                    \end{Bmatrix} \\
-    \boldsymbol{\omega}_{4} &= \begin{Bmatrix}
+                    \end{Bmatrix} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \boldsymbol{\omega}_{4} = \begin{Bmatrix}
                     0 \\
                     -\theta_{4} \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{v}_{4} &= \begin{Bmatrix}
+    \mathbf{v}_{4} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{d}_{4} &= \begin{Bmatrix}
+    \mathbf{d}_{4} = \begin{Bmatrix}
                     -L_{1}-L_{2} \\
                     0 \\
                     H_{1}
-                    \end{Bmatrix} \\
-    \boldsymbol{\omega}_{5} &= \begin{Bmatrix}
+                    \end{Bmatrix} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \boldsymbol{\omega}_{5} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     -\theta_{5}
                     \end{Bmatrix} , 
-    & \mathbf{v}_{5} &= \begin{Bmatrix}
+    \mathbf{v}_{5} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{d}_{5} &= \begin{Bmatrix}
+    \mathbf{d}_{5} = \begin{Bmatrix}
                     -L_{1}-L_{2} \\
                     -W_{1} \\
                     0
-                    \end{Bmatrix} \\
-    \boldsymbol{\omega}_{6} &= \begin{Bmatrix}
+                    \end{Bmatrix} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \boldsymbol{\omega}_{6} = \begin{Bmatrix}
                     0 \\
                     -\theta_{6} \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{v}_{6} &= \begin{Bmatrix}
+    \mathbf{v}_{6} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{d}_{6} &= \begin{Bmatrix}
+    \mathbf{d}_{6} = \begin{Bmatrix}
                     -L_{1}-L_{2} \\
                     0 \\
                     H_{1}-H_{2}
                     \end{Bmatrix} 
-\end{aligned}
 \end{equation}
 ```
 
 ```math
 \begin{equation}
-\begin{aligned}
-    \mathbf{S}_{1} &= \begin{Bmatrix}
+    \mathbf{S}_{1} = \begin{Bmatrix}
                     0 &
                     0 &
                     1 &
                     0 &
                     0 &
                     0
-                    \end{Bmatrix}^{\top} \theta_{1} \\
-    \mathbf{S}_{2} &= \begin{Bmatrix}
+                    \end{Bmatrix}^{\top} \theta_{1} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \mathbf{S}_{2} = \begin{Bmatrix}
                     0 &
                     -1 &
                     0 &
                     H_{1} &
                     0 &
                     0
-                    \end{Bmatrix}^{\top} \theta_{2} \\
-    \mathbf{S}_{3} &= \begin{Bmatrix}
+                    \end{Bmatrix}^{\top} \theta_{2} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \mathbf{S}_{3} = \begin{Bmatrix}
                     0 &
                     -1 &
                     0 &
                     H_{1} &
                     0 &
                     L_{1}
-                    \end{Bmatrix}^{\top} \theta_{3} \\
-    \mathbf{S}_{4} &= \begin{Bmatrix}
+                    \end{Bmatrix}^{\top} \theta_{3} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \mathbf{S}_{4} = \begin{Bmatrix}
                     0 &
                     -1 &
                     0 &
                     H_{1} &
                     0 &
                     L_{1}+L_{2}
-                    \end{Bmatrix}^{\top} \theta_{4} \\
-    \mathbf{S}_{5} &= \begin{Bmatrix}
+                    \end{Bmatrix}^{\top} \theta_{4} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \mathbf{S}_{5} = \begin{Bmatrix}
                     0 &
                     0 &
                     -1 &
                     W_{1} &
                     -L_{1}-L_{2} &
                     0
-                    \end{Bmatrix}^{\top} \theta_{5} \\
-    \mathbf{S}_{6} &= \begin{Bmatrix}
+                    \end{Bmatrix}^{\top} \theta_{5} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \mathbf{S}_{6} = \begin{Bmatrix}
                     0 &
                     -1 &
                     0 &
@@ -634,123 +671,128 @@ where $n$ is the number of links in the robotic system.
                     0 &
                     L_{1}-L_{2}
                     \end{Bmatrix}^{\top} \theta_{6}
-\end{aligned}
 \end{equation}
 ```
 
 ```math
 \begin{equation}
-\begin{aligned}
-   \\ [\mathbf{S}_{{1}}]^{\wedge} &= \begin{bmatrix}
+   [\mathbf{S}_{{1}}]^{\wedge} = \begin{bmatrix}
                             0 & -1 & 0 & 0 \\
                             1 & 0 & 0 & 0 \\
                             0 & 0 & 0 & 0 \\
                             0 & 0 & 0 & 0
-                            \end{bmatrix} \theta_{1} \\
-    [\mathbf{S}_{{2}}]^{\wedge} &= \begin{bmatrix}
+                            \end{bmatrix} \theta_{1} 
+\end{equation}
+```
+```math
+\begin{equation}
+    [\mathbf{S}_{{2}}]^{\wedge} = \begin{bmatrix}
                             0 & 0 & 1 & H_{1} \\
                             0 & 0 & 0 & 0 \\
                             -1 & 0 & 0 & 0 \\
                             0 & 0 & 0 & 0
-                            \end{bmatrix} \theta_{2} \\
-    [\mathbf{S}_{{3}}]^{\wedge} &= \begin{bmatrix}
+                            \end{bmatrix} \theta_{2} 
+\end{equation}
+```
+```math
+\begin{equation}
+    [\mathbf{S}_{{3}}]^{\wedge} = \begin{bmatrix}
                             0 & 0 & 1 & H_{1} \\
                             0 & 0 & 0 & 0 \\
                             -1 & 0 & 0 & L_{1} \\
                             0 & 0 & 0 & 0
-                            \end{bmatrix} \theta_{3} \\
-    [\mathbf{S}_{{4}}]^{\wedge} &= \begin{bmatrix}
+                            \end{bmatrix} \theta_{3} 
+\end{equation}
+```
+```math
+\begin{equation}
+    [\mathbf{S}_{{4}}]^{\wedge} = \begin{bmatrix}
                             0 & 0 & 1 & H_{1} \\
                             0 & 0 & 0 & 0 \\
                             -1 & 0 & 0 & L_{1}+L_{2} \\
                             0 & 0 & 0 & 0
-                            \end{bmatrix} \theta_{4} \\
-    [\mathbf{S}_{{5}}]^{\wedge} &= \begin{bmatrix}
+                            \end{bmatrix} \theta_{4} 
+\end{equation}
+```
+```math
+\begin{equation}
+    [\mathbf{S}_{{5}}]^{\wedge} = \begin{bmatrix}
                             0 & -1 & 0 & W_{1} \\
                             1 & 0 & 0 & -L_{1}-L_{2} \\
                             0 & 0 & 0 & 0 \\
                             0 & 0 & 0 & 0
-                            \end{bmatrix} \theta_{5} \\
-    [\mathbf{S}_{{6}}]^{\wedge} &= \begin{bmatrix}
+                            \end{bmatrix} \theta_{5} 
+\end{equation}
+```
+```math
+\begin{equation}
+    [\mathbf{S}_{{6}}]^{\wedge} = \begin{bmatrix}
                             0 & 0 & 1 & H_{1}-H_{2} \\
                             0 & 0 & 0 & 0 \\
                             -1 & 0 & 0 & L_{1}+L_{2} \\
                             0 & 0 & 0 & 0
                             \end{bmatrix} \theta_{6} 
-\end{aligned}
 \end{equation}
 ```
 
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{1}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{1}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{1}} & -\sin{\theta_{1}} & 0 & 0 \\
                             \sin{\theta_{1}} & \cos{\theta_{1}} & 0 & 0 \\
                             0 & 0 & 1 & 0 \\
                             0 & 0 & 0 & 1
-                            \end{bmatrix} \\
-\end{aligned}
+                            \end{bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{2}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{2}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{2}} & 0 & \sin{\theta_{2}} & H_{1}\sin{\theta_{2}} \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{2}} & 0 & \cos{\theta_{2}} & H_{1}\left(\cos{\theta_{2}}-1\right) \\
                             0 & 0 & 0 & 1
-                            \end{bmatrix} \\
-\end{aligned}
+                            \end{bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{3}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{3}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{3}} & 0 & \sin{\theta_{3}} & H_{1}\sin{\theta_{3}} + L_{1}\left(1-\cos{\theta_{3}}\right) \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{3}} & 0 & \cos{\theta_{3}} & H_{1}\left(\cos{\theta_{3}}-1\right) + L_{1}\sin{\theta_{3}} \\
                             0 & 0 & 0 & 1
-                            \end{bmatrix} \\
-\end{aligned}
+                            \end{bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{4}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{4}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{4}} & 0 & \sin{\theta_{4}} & H_{1}\sin{\theta_{4}} + \left(L_{1}+L_{2}\right)\left(1-\cos{\theta_{4}}\right) \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{4}} & 0 & \cos{\theta_{4}} & H_{1}\left(\cos{\theta_{4}}-1\right) + \left(L_{1}+L_{2}\right)\sin{\theta_{4}} \\
                             0 & 0 & 0 & 1
-                            \end{bmatrix} \\
-\end{aligned}
+                            \end{bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{5}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{5}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{5}} & -\sin{\theta_{5}} & 0 & W_{1}\sin{\theta_{5}}-\left(L_{1}+L_{2}\right)\left(\cos{\theta_{5}}-1\right) \\
                             \sin{\theta_{5}} & \cos{\theta_{5}} & 0 & W_{1}\left(1-\cos{\theta_{5}}\right)-\left(L_{1}+L_{2}\right)\sin{\theta_{5}} \\
                             0 & 0 & 1 & 0 \\
                             0 & 0 & 0 & 1
-                            \end{bmatrix} \\
-\end{aligned}
+                            \end{bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{6}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{6}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{6}} & 0 & \sin{\theta_{6}} & \left(H_{1}-H_{2}\right)\sin{\theta_{6}} + \left(L_{1}+L_{2}\right)\left(1-\cos{\theta_{6}}\right) \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{6}} & 0 & \cos{\theta_{6}} & \left(H_{1}-H_{2}\right)\left(\cos{\theta_{6}}-1\right) + \left(L_{1}+L_{2}\right)\sin{\theta_{6}} \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} 
-\end{aligned}
 \end{equation}
 ```
 
@@ -781,204 +823,213 @@ where $n$ is the number of links in the robotic system.
 
 ```math
 \begin{equation}
-\begin{aligned}
-    \boldsymbol{\omega}_{b} &= \begin{Bmatrix}
+    \boldsymbol{\omega}_{b} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     \omega
                     \end{Bmatrix} ,
-    & \mathbf{v}_{b} &= \begin{Bmatrix}
+    \mathbf{v}_{b} = \begin{Bmatrix}
                     v \\
                     0 \\
                     0
                     \end{Bmatrix} ,
-    & \mathbf{d}_{b} &= \begin{Bmatrix}
+    \mathbf{d}_{b} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
-                    \end{Bmatrix}  \\
-\end{aligned}
+                    \end{Bmatrix}  
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    \boldsymbol{\omega}_{1} &= \begin{Bmatrix}
+    \boldsymbol{\omega}_{1} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     \theta_{1}
                     \end{Bmatrix} ,
-    & \mathbf{v}_{1} &= \begin{Bmatrix}
+    \mathbf{v}_{1} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} ,
-    & \mathbf{d}_{1} &= \begin{Bmatrix}
+    \mathbf{d}_{1} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
-                    \end{Bmatrix}  \\
-\end{aligned}
+                    \end{Bmatrix}  
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    \boldsymbol{\omega}_{2} &= \begin{Bmatrix}
+    \boldsymbol{\omega}_{2} = \begin{Bmatrix}
                     0 \\
                     -\theta_{2} \\
                     0
                     \end{Bmatrix} ,
-    & \mathbf{v}_{2} &= \begin{Bmatrix}
+    \mathbf{v}_{2} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} ,
-    & \mathbf{d}_{2} &= \begin{Bmatrix}
+    \mathbf{d}_{2} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     H_{1}
-                    \end{Bmatrix}  \\
-\end{aligned}
+                    \end{Bmatrix}  
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    \boldsymbol{\omega}_{3} &= \begin{Bmatrix}
+    \boldsymbol{\omega}_{3} = \begin{Bmatrix}
                     0 \\
                     -\theta_{3} \\
                     0
                     \end{Bmatrix} ,
-    & \mathbf{v}_{3} &= \begin{Bmatrix}
+    \mathbf{v}_{3} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} ,
-    & \mathbf{d}_{3} &= \begin{Bmatrix}
+    \mathbf{d}_{3} = \begin{Bmatrix}
                     -L_{1} \\
                     0 \\
                     H_{1}
-                    \end{Bmatrix} \\
-\end{aligned}
+                    \end{Bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    \boldsymbol{\omega}_{4} &= \begin{Bmatrix}
+    \boldsymbol{\omega}_{4} = \begin{Bmatrix}
                     0 \\
                     -\theta_{4} \\
                     0
                     \end{Bmatrix} ,
-    & \mathbf{v}_{4} &= \begin{Bmatrix}
+    \mathbf{v}_{4} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} ,
-    & \mathbf{d}_{4} &= \begin{Bmatrix}
+    \mathbf{d}_{4} = \begin{Bmatrix}
                     -L_{1}-L_{2} \\
                     0 \\
                     H_{1}
-                    \end{Bmatrix} \\
-\end{aligned}
+                    \end{Bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    \boldsymbol{\omega}_{5} &= \begin{Bmatrix}
+    \boldsymbol{\omega}_{5} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     -\theta_{5}
                     \end{Bmatrix} , 
-    & \mathbf{v}_{5} &= \begin{Bmatrix}
+    \mathbf{v}_{5} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{d}_{5} &= \begin{Bmatrix}
+    \mathbf{d}_{5} = \begin{Bmatrix}
                     -L_{1}-L_{2} \\
                     -W_{1} \\
                     0
-                    \end{Bmatrix} \\
-\end{aligned}
+                    \end{Bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    \boldsymbol{\omega}_{6} &= \begin{Bmatrix}
+    \boldsymbol{\omega}_{6} = \begin{Bmatrix}
                     0 \\
                     -\theta_{6} \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{v}_{6} &= \begin{Bmatrix}
+    \mathbf{v}_{6} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{d}_{6} &= \begin{Bmatrix}
+    \mathbf{d}_{6} = \begin{Bmatrix}
                     -L_{1}-L_{2} \\
                     0 \\
                     H_{1}-H_{2}
                     \end{Bmatrix} 
-\end{aligned}
 \end{equation}
 ```
 
 ```math
 \begin{equation}
-\begin{aligned}
-    \mathbf{S}_{b} &= \begin{Bmatrix}
+    \mathbf{S}_{b} = \begin{Bmatrix}
                     0 &
                     0 &
                     \omega &
                     v &
                     0 &
                     0
-                    \end{Bmatrix}^{\top} \\
-    \mathbf{S}_{1} &= \begin{Bmatrix}
+                    \end{Bmatrix}^{\top} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \mathbf{S}_{1} = \begin{Bmatrix}
                     0 &
                     0 &
                     1 &
                     0 &
                     0 &
                     0
-                    \end{Bmatrix}^{\top} \theta_{1} \\
-    \mathbf{S}_{2} &= \begin{Bmatrix}
+                    \end{Bmatrix}^{\top} \theta_{1} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \mathbf{S}_{2} = \begin{Bmatrix}
                     0 &
                     -1 &
                     0 &
                     H_{1} &
                     0 &
                     0
-                    \end{Bmatrix}^{\top} \theta_{2} \\
-    \mathbf{S}_{3} &= \begin{Bmatrix}
+                    \end{Bmatrix}^{\top} \theta_{2} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \mathbf{S}_{3} = \begin{Bmatrix}
                     0 &
                     -1 &
                     0 &
                     H_{1} &
                     0 &
                     L_{1}
-                    \end{Bmatrix}^{\top} \theta_{3} \\
-    \mathbf{S}_{4} &= \begin{Bmatrix}
+                    \end{Bmatrix}^{\top} \theta_{3} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \mathbf{S}_{4} = \begin{Bmatrix}
                     0 &
                     -1 &
                     0 &
                     H_{1} &
                     0 &
                     L_{1}+L_{2}
-                    \end{Bmatrix}^{\top} \theta_{4} \\
-    \mathbf{S}_{5} &= \begin{Bmatrix}
+                    \end{Bmatrix}^{\top} \theta_{4} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \mathbf{S}_{5} = \begin{Bmatrix}
                     0 &
                     0 &
                     -1 &
                     W_{1} &
                     -L_{1}-L_{2} &
                     0
-                    \end{Bmatrix}^{\top} \theta_{5} \\
-    \mathbf{S}_{6} &= \begin{Bmatrix}
+                    \end{Bmatrix}^{\top} \theta_{5} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \mathbf{S}_{6} = \begin{Bmatrix}
                     0 &
                     -1 &
                     0 &
@@ -986,140 +1037,147 @@ where $n$ is the number of links in the robotic system.
                     0 &
                     L_{1}-L_{2}
                     \end{Bmatrix}^{\top} \theta_{6}
-\end{aligned}
 \end{equation}
 ```
 
 ```math
 \begin{equation}
-\begin{aligned}
- \\   [\mathbf{S}_{{b}}]^{\wedge} &= \begin{bmatrix}
+    [\mathbf{S}_{{b}}]^{\wedge} = \begin{bmatrix}
                             0 & -\omega & 0 & v \\
                             \omega & 0 & 0 & 0 \\
                             0 & 0 & 0 & 0 \\
                             0 & 0 & 0 & 0
-                            \end{bmatrix} \\
-    [\mathbf{S}_{{1}}]^{\wedge} &= \begin{bmatrix}
+                            \end{bmatrix} 
+\end{equation}
+```
+```math
+\begin{equation}
+    [\mathbf{S}_{{1}}]^{\wedge} = \begin{bmatrix}
                             0 & -1 & 0 & 0 \\
                             1 & 0 & 0 & 0 \\
                             0 & 0 & 0 & 0 \\
                             0 & 0 & 0 & 0
-                            \end{bmatrix} \theta_{1} \\
-    [\mathbf{S}_{{2}}]^{\wedge} &= \begin{bmatrix}
+                            \end{bmatrix} \theta_{1} 
+\end{equation}
+```
+```math
+\begin{equation}
+    [\mathbf{S}_{{2}}]^{\wedge} = \begin{bmatrix}
                             0 & 0 & 1 & H_{1} \\
                             0 & 0 & 0 & 0 \\
                             -1 & 0 & 0 & 0 \\
                             0 & 0 & 0 & 0
-                            \end{bmatrix} \theta_{2} \\
-    [\mathbf{S}_{{3}}]^{\wedge} &= \begin{bmatrix}
+                            \end{bmatrix} \theta_{2} 
+\end{equation}
+```
+```math
+\begin{equation}
+    [\mathbf{S}_{{3}}]^{\wedge} = \begin{bmatrix}
                             0 & 0 & 1 & H_{1} \\
                             0 & 0 & 0 & 0 \\
                             -1 & 0 & 0 & L_{1} \\
                             0 & 0 & 0 & 0
-                            \end{bmatrix} \theta_{3} \\
-    [\mathbf{S}_{{4}}]^{\wedge} &= \begin{bmatrix}
+                            \end{bmatrix} \theta_{3} 
+\end{equation}
+```
+```math
+\begin{equation}
+    [\mathbf{S}_{{4}}]^{\wedge} = \begin{bmatrix}
                             0 & 0 & 1 & H_{1} \\
                             0 & 0 & 0 & 0 \\
                             -1 & 0 & 0 & L_{1}+L_{2} \\
                             0 & 0 & 0 & 0
-                            \end{bmatrix} \theta_{4} \\
-    [\mathbf{S}_{{5}}]^{\wedge} &= \begin{bmatrix}
+                            \end{bmatrix} \theta_{4} 
+\end{equation}
+```
+```math
+\begin{equation}
+    [\mathbf{S}_{{5}}]^{\wedge} = \begin{bmatrix}
                             0 & -1 & 0 & W_{1} \\
                             1 & 0 & 0 & -L_{1}-L_{2} \\
                             0 & 0 & 0 & 0 \\
                             0 & 0 & 0 & 0
-                            \end{bmatrix} \theta_{5} \\
-    [\mathbf{S}_{{6}}]^{\wedge} &= \begin{bmatrix}
+                            \end{bmatrix} \theta_{5} 
+\end{equation}
+```
+```math
+\begin{equation}
+    [\mathbf{S}_{{6}}]^{\wedge} = \begin{bmatrix}
                             0 & 0 & 1 & H_{1}-H_{2} \\
                             0 & 0 & 0 & 0 \\
                             -1 & 0 & 0 & L_{1}+L_{2} \\
                             0 & 0 & 0 & 0
                             \end{bmatrix} \theta_{6} 
-\end{aligned}
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-\\    [\Delta\mathbf{P}^{B}_{B,k}] &= \begin{bmatrix}
+    [\Delta\mathbf{P}^{B}_{B,k}] = \begin{bmatrix}
                             \cos{\omega_k} & -\sin{\omega_k} & 0 & \frac{v_k}{\omega_k}\sin{\omega_k} \\
                             \sin{\omega_k} & \cos{\omega_k} & 0 & \frac{v_k}{\omega_k}\left(1-\cos{\omega_k}\right) \\
                             0 & 0 & 1 & 0 \\
                             0 & 0 & 0 & 1
-                            \end{bmatrix} dt \\
-\end{aligned}
+                            \end{bmatrix} dt 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{1}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{1}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{1}} & -\sin{\theta_{1}} & 0 & 0 \\
                             \sin{\theta_{1}} & \cos{\theta_{1}} & 0 & 0 \\
                             0 & 0 & 1 & 0 \\
                             0 & 0 & 0 & 1
-                            \end{bmatrix} \\
-\end{aligned}
+                            \end{bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{2}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{2}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{2}} & 0 & \sin{\theta_{2}} & H_{1}\sin{\theta_{2}} \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{2}} & 0 & \cos{\theta_{2}} & H_{1}\left(\cos{\theta_{2}}-1\right) \\
                             0 & 0 & 0 & 1
-                            \end{bmatrix} \\
-\end{aligned}
+                            \end{bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{3}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{3}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{3}} & 0 & \sin{\theta_{3}} & H_{1}\sin{\theta_{3}} + L_{1}\left(1-\cos{\theta_{3}}\right) \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{3}} & 0 & \cos{\theta_{3}} & H_{1}\left(\cos{\theta_{3}}-1\right) + L_{1}\sin{\theta_{3}} \\
                             0 & 0 & 0 & 1
-                            \end{bmatrix} \\
-\end{aligned}
+                            \end{bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{4}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{4}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{4}} & 0 & \sin{\theta_{4}} & H_{1}\sin{\theta_{4}} + \left(L_{1}+L_{2}\right)\left(1-\cos{\theta_{4}}\right) \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{4}} & 0 & \cos{\theta_{4}} & H_{1}\left(\cos{\theta_{4}}-1\right) + \left(L_{1}+L_{2}\right)\sin{\theta_{4}} \\
                             0 & 0 & 0 & 1
-                            \end{bmatrix} \\
-\end{aligned}
+                            \end{bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{5}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{5}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{5}} & -\sin{\theta_{5}} & 0 & W_{1}\sin{\theta_{5}}-\left(L_{1}+L_{2}\right)\left(\cos{\theta_{5}}-1\right) \\
                             \sin{\theta_{5}} & \cos{\theta_{5}} & 0 & W_{1}\left(1-\cos{\theta_{5}}\right)-\left(L_{1}+L_{2}\right)\sin{\theta_{5}} \\
                             0 & 0 & 1 & 0 \\
                             0 & 0 & 0 & 1
-                            \end{bmatrix} \\
-\end{aligned}
+                            \end{bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{6}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{6}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{6}} & 0 & \sin{\theta_{6}} & \left(H_{1}-H_{2}\right)\sin{\theta_{6}} + \left(L_{1}+L_{2}\right)\left(1-\cos{\theta_{6}}\right) \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{6}} & 0 & \cos{\theta_{6}} & \left(H_{1}-H_{2}\right)\left(\cos{\theta_{6}}-1\right) + \left(L_{1}+L_{2}\right)\sin{\theta_{6}} \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} 
-\end{aligned}
 \end{equation}
 ```
 
@@ -1150,204 +1208,213 @@ where $n$ is the number of links in the robotic system.
 
 ```math
 \begin{equation}
-\begin{aligned}
-    \boldsymbol{\omega}_{b} &= \begin{Bmatrix}
+    \boldsymbol{\omega}_{b} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     \omega
                     \end{Bmatrix} , 
-    & \mathbf{v}_{b} &= \begin{Bmatrix}
+    \mathbf{v}_{b} = \begin{Bmatrix}
                     v_{x} \\
                     v_{y} \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{d}_{b} &= \begin{Bmatrix}
+    \mathbf{d}_{b} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
-                    \end{Bmatrix}  \\
-\end{aligned}
+                    \end{Bmatrix}  
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    \boldsymbol{\omega}_{1} &= \begin{Bmatrix}
+    \boldsymbol{\omega}_{1} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     \theta_{1}
                     \end{Bmatrix} , 
-    & \mathbf{v}_{1} &= \begin{Bmatrix}
+    \mathbf{v}_{1} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{d}_{1} &= \begin{Bmatrix}
+    \mathbf{d}_{1} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
-                    \end{Bmatrix}  \\
-\end{aligned}
+                    \end{Bmatrix}  
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    \boldsymbol{\omega}_{2} &= \begin{Bmatrix}
+    \boldsymbol{\omega}_{2} = \begin{Bmatrix}
                     0 \\
                     -\theta_{2} \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{v}_{2} &= \begin{Bmatrix}
+    \mathbf{v}_{2} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{d}_{2} &= \begin{Bmatrix}
+    \mathbf{d}_{2} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     H_{1}
-                    \end{Bmatrix}  \\
-\end{aligned}
+                    \end{Bmatrix}  
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    \boldsymbol{\omega}_{3} &= \begin{Bmatrix}
+    \boldsymbol{\omega}_{3} = \begin{Bmatrix}
                     0 \\
                     -\theta_{3} \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{v}_{3} &= \begin{Bmatrix}
+    \mathbf{v}_{3} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{d}_{3} &= \begin{Bmatrix}
+    \mathbf{d}_{3} = \begin{Bmatrix}
                     -L_{1} \\
                     0 \\
                     H_{1}
-                    \end{Bmatrix} \\
-\end{aligned}
+                    \end{Bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    \boldsymbol{\omega}_{4} &= \begin{Bmatrix}
+    \boldsymbol{\omega}_{4} = \begin{Bmatrix}
                     0 \\
                     -\theta_{4} \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{v}_{4} &= \begin{Bmatrix}
+    \mathbf{v}_{4} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{d}_{4} &= \begin{Bmatrix}
+    \mathbf{d}_{4} = \begin{Bmatrix}
                     -L_{1}-L_{2} \\
                     0 \\
                     H_{1}
-                    \end{Bmatrix} \\
-\end{aligned}
+                    \end{Bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    \boldsymbol{\omega}_{5} &= \begin{Bmatrix}
+    \boldsymbol{\omega}_{5} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     -\theta_{5}
                     \end{Bmatrix} , 
-    & \mathbf{v}_{5} &= \begin{Bmatrix}
+    \mathbf{v}_{5} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{d}_{5} &= \begin{Bmatrix}
+    \mathbf{d}_{5} = \begin{Bmatrix}
                     -L_{1}-L_{2} \\
                     -W_{1} \\
                     0
-                    \end{Bmatrix} \\
-\end{aligned}
+                    \end{Bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    \boldsymbol{\omega}_{6} &= \begin{Bmatrix}
+    \boldsymbol{\omega}_{6} = \begin{Bmatrix}
                     0 \\
                     -\theta_{6} \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{v}_{6} &= \begin{Bmatrix}
+    \mathbf{v}_{6} = \begin{Bmatrix}
                     0 \\
                     0 \\
                     0
                     \end{Bmatrix} , 
-    & \mathbf{d}_{6} &= \begin{Bmatrix}
+    \mathbf{d}_{6} = \begin{Bmatrix}
                     -L_{1}-L_{2} \\
                     0 \\
                     H_{1}-H_{2}
                     \end{Bmatrix} 
-\end{aligned}
 \end{equation}
 ```
 
 ```math
 \begin{equation}
-\begin{aligned}
-    \mathbf{S}_{b} &= \begin{Bmatrix}
+    \mathbf{S}_{b} = \begin{Bmatrix}
                     0 &
                     0 &
                     \omega &
                     v_{x} &
                     v_{y} &
                     0
-                    \end{Bmatrix}^{\top} \\
-    \mathbf{S}_{1} &= \begin{Bmatrix}
+                    \end{Bmatrix}^{\top} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \mathbf{S}_{1} = \begin{Bmatrix}
                     0 &
                     0 &
                     1 &
                     0 &
                     0 &
                     0
-                    \end{Bmatrix}^{\top} \theta_{1} \\
-    \mathbf{S}_{2} &= \begin{Bmatrix}
+                    \end{Bmatrix}^{\top} \theta_{1} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \mathbf{S}_{2} = \begin{Bmatrix}
                     0 &
                     -1 &
                     0 &
                     H_{1} &
                     0 &
                     0
-                    \end{Bmatrix}^{\top} \theta_{2} \\
-    \mathbf{S}_{3} &= \begin{Bmatrix}
+                    \end{Bmatrix}^{\top} \theta_{2} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \mathbf{S}_{3} = \begin{Bmatrix}
                     0 &
                     -1 &
                     0 &
                     H_{1} &
                     0 &
                     L_{1}
-                    \end{Bmatrix}^{\top} \theta_{3} \\
-    \mathbf{S}_{4} &= \begin{Bmatrix}
+                    \end{Bmatrix}^{\top} \theta_{3} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \mathbf{S}_{4} = \begin{Bmatrix}
                     0 &
                     -1 &
                     0 &
                     H_{1} &
                     0 &
                     L_{1}+L_{2}
-                    \end{Bmatrix}^{\top} \theta_{4} \\
-    \mathbf{S}_{5} &= \begin{Bmatrix}
+                    \end{Bmatrix}^{\top} \theta_{4} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \mathbf{S}_{5} = \begin{Bmatrix}
                     0 &
                     0 &
                     -1 &
                     W_{1} &
                     -L_{1}-L_{2} &
                     0
-                    \end{Bmatrix}^{\top} \theta_{5} \\
-    \mathbf{S}_{6} &= \begin{Bmatrix}
+                    \end{Bmatrix}^{\top} \theta_{5} 
+\end{equation}
+```
+```math
+\begin{equation}
+    \mathbf{S}_{6} = \begin{Bmatrix}
                     0 &
                     -1 &
                     0 &
@@ -1355,141 +1422,148 @@ where $n$ is the number of links in the robotic system.
                     0 &
                     L_{1}-L_{2}
                     \end{Bmatrix}^{\top} \theta_{6}
-\end{aligned}
 \end{equation}
 ```
 
 ```math
 \begin{equation}
-\begin{aligned}
-\\    [\mathbf{S}_{{b}}]^{\wedge} &= \begin{bmatrix}
+    [\mathbf{S}_{{b}}]^{\wedge} = \begin{bmatrix}
                             0 & -\omega & 0 & v_{x} \\
                             \omega & 0 & 0 & v_{y} \\
                             0 & 0 & 0 & 0 \\
                             0 & 0 & 0 & 0
-                            \end{bmatrix} \\
-    [\mathbf{S}_{{1}}]^{\wedge} &= \begin{bmatrix}
+                            \end{bmatrix} 
+\end{equation}
+```
+```math
+\begin{equation}
+    [\mathbf{S}_{{1}}]^{\wedge} = \begin{bmatrix}
                             0 & -1 & 0 & 0 \\
                             1 & 0 & 0 & 0 \\
                             0 & 0 & 0 & 0 \\
                             0 & 0 & 0 & 0
-                            \end{bmatrix} \theta_{1} \\
-    [\mathbf{S}_{{2}}]^{\wedge} &= \begin{bmatrix}
+                            \end{bmatrix} \theta_{1} 
+\end{equation}
+```
+```math
+\begin{equation}
+    [\mathbf{S}_{{2}}]^{\wedge} = \begin{bmatrix}
                             0 & 0 & 1 & H_{1} \\
                             0 & 0 & 0 & 0 \\
                             -1 & 0 & 0 & 0 \\
                             0 & 0 & 0 & 0
-                            \end{bmatrix} \theta_{2} \\
-    [\mathbf{S}_{{3}}]^{\wedge} &= \begin{bmatrix}
+                            \end{bmatrix} \theta_{2}
+\end{equation}
+```
+```math
+\begin{equation}
+    [\mathbf{S}_{{3}}]^{\wedge} = \begin{bmatrix}
                             0 & 0 & 1 & H_{1} \\
                             0 & 0 & 0 & 0 \\
                             -1 & 0 & 0 & L_{1} \\
                             0 & 0 & 0 & 0
-                            \end{bmatrix} \theta_{3} \\
-    [\mathbf{S}_{{4}}]^{\wedge} &= \begin{bmatrix}
+                            \end{bmatrix} \theta_{3} 
+\end{equation}
+```
+```math
+\begin{equation}
+    [\mathbf{S}_{{4}}]^{\wedge} = \begin{bmatrix}
                             0 & 0 & 1 & H_{1} \\
                             0 & 0 & 0 & 0 \\
                             -1 & 0 & 0 & L_{1}+L_{2} \\
                             0 & 0 & 0 & 0
-                            \end{bmatrix} \theta_{4} \\
-    [\mathbf{S}_{{5}}]^{\wedge} &= \begin{bmatrix}
+                            \end{bmatrix} \theta_{4} 
+\end{equation}
+```
+```math
+\begin{equation}
+    [\mathbf{S}_{{5}}]^{\wedge} = \begin{bmatrix}
                             0 & -1 & 0 & W_{1} \\
                             1 & 0 & 0 & -L_{1}-L_{2} \\
                             0 & 0 & 0 & 0 \\
                             0 & 0 & 0 & 0
-                            \end{bmatrix} \theta_{5} \\
-    [\mathbf{S}_{{6}}]^{\wedge} &= \begin{bmatrix}
+                            \end{bmatrix} \theta_{5} 
+\end{equation}
+```
+```math
+\begin{equation}
+    [\mathbf{S}_{{6}}]^{\wedge} = \begin{bmatrix}
                             0 & 0 & 1 & H_{1}-H_{2} \\
                             0 & 0 & 0 & 0 \\
                             -1 & 0 & 0 & L_{1}+L_{2} \\
                             0 & 0 & 0 & 0
                             \end{bmatrix} \theta_{6} 
-\end{aligned}
 \end{equation}
 ```
 
 ```math
 \begin{equation}
-\begin{aligned}
-    [\Delta\mathbf{P}^{B}_{B,k}] &= \begin{bmatrix}
+    [\Delta\mathbf{P}^{B}_{B,k}] = \begin{bmatrix}
                             \cos{\omega_k} & -\sin{\omega_k} & 0 & \frac{v_{x,k}\sin{\omega_k}+v_{y,k}\left(\cos{\omega_k}-1\right)}{\omega_k} \\
                             \sin{\omega_k} & \cos{\omega_k} & 0 & \frac{v_{y,k}\sin{\omega_k}+v_{x,k}\left(1-\cos{\omega_k}\right)}{\omega_k} \\
                             0 & 0 & 1 & 0 \\
                             0 & 0 & 0 & 1
-                            \end{bmatrix} dt \\
-\end{aligned}
+                            \end{bmatrix} dt 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{1}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{1}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{1}} & -\sin{\theta_{1}} & 0 & 0 \\
                             \sin{\theta_{1}} & \cos{\theta_{1}} & 0 & 0 \\
                             0 & 0 & 1 & 0 \\
                             0 & 0 & 0 & 1
-                            \end{bmatrix} \\
-\end{aligned}
+                            \end{bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{2}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{2}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{2}} & 0 & \sin{\theta_{2}} & H_{1}\sin{\theta_{2}} \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{2}} & 0 & \cos{\theta_{2}} & H_{1}\left(\cos{\theta_{2}}-1\right) \\
                             0 & 0 & 0 & 1
-                            \end{bmatrix} \\
-\end{aligned}
+                            \end{bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{3}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{3}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{3}} & 0 & \sin{\theta_{3}} & H_{1}\sin{\theta_{3}} + L_{1}\left(1-\cos{\theta_{3}}\right) \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{3}} & 0 & \cos{\theta_{3}} & H_{1}\left(\cos{\theta_{3}}-1\right) + L_{1}\sin{\theta_{3}} \\
                             0 & 0 & 0 & 1
-                            \end{bmatrix} \\
-\end{aligned}
+                            \end{bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{4}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{4}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{4}} & 0 & \sin{\theta_{4}} & H_{1}\sin{\theta_{4}} + \left(L_{1}+L_{2}\right)\left(1-\cos{\theta_{4}}\right) \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{4}} & 0 & \cos{\theta_{4}} & H_{1}\left(\cos{\theta_{4}}-1\right) + \left(L_{1}+L_{2}\right)\sin{\theta_{4}} \\
                             0 & 0 & 0 & 1
-                            \end{bmatrix} \\
-\end{aligned}
+                            \end{bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{5}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{5}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{5}} & -\sin{\theta_{5}} & 0 & W_{1}\sin{\theta_{5}}-\left(L_{1}+L_{2}\right)\left(\cos{\theta_{5}}-1\right) \\
                             \sin{\theta_{5}} & \cos{\theta_{5}} & 0 & W_{1}\left(1-\cos{\theta_{5}}\right)-\left(L_{1}+L_{2}\right)\sin{\theta_{5}} \\
                             0 & 0 & 1 & 0 \\
                             0 & 0 & 0 & 1
-                            \end{bmatrix} \\
-\end{aligned}
+                            \end{bmatrix} 
 \end{equation}
 ```
 ```math
 \begin{equation}
-\begin{aligned}
-    e^{[\mathbf{S}_{{6}}]^{\wedge}} &= \begin{bmatrix}
+    e^{[\mathbf{S}_{{6}}]^{\wedge}} = \begin{bmatrix}
                             \cos{\theta_{6}} & 0 & \sin{\theta_{6}} & \left(H_{1}-H_{2}\right)\sin{\theta_{6}} + \left(L_{1}+L_{2}\right)\left(1-\cos{\theta_{6}}\right) \\
                             0 & 1 & 0 & 0 \\
                             -\sin{\theta_{6}} & 0 & \cos{\theta_{6}} & \left(H_{1}-H_{2}\right)\left(\cos{\theta_{6}}-1\right) + \left(L_{1}+L_{2}\right)\sin{\theta_{6}} \\
                             0 & 0 & 0 & 1
                             \end{bmatrix} 
-\end{aligned}
 \end{equation}
 ```
 
