@@ -3,8 +3,9 @@
 <figure>
     <img src="images/manifold.png"
          alt="Pictorial representation of using Lie theory to move across the Lie group using the corresponding Lie algebra. The motion in between each point on the Lie group (manifold) can be represented as a motion on the corresponding Lie algebra (tangent surface).">
-    <figcaption>Pictorial representation of using Lie theory to move across the Lie group using the corresponding Lie algebra. The motion in between each point on the Lie group (manifold) can be represented as a motion on the corresponding Lie algebra (tangent surface).</figcaption>
+    <figcaption><em>Pictorial representation of using Lie theory to move across the Lie group using the corresponding Lie algebra. The motion in between each point on the Lie group (manifold) can be represented as a motion on the corresponding Lie algebra (tangent surface).</em></figcaption>
 </figure>
+<br/><br/>
 
 We present SLITHERS (State planner using LIe THEory for RoboticS), a Lie theory based optimization approach for state planning of mobile manipulators. 
 Given the sequence of end effector poses, SLITHERS solves for the joint values incrementally using kinematic constraints found through Lie theory. 
@@ -18,8 +19,9 @@ In this study, our contribution is three-folds:
 <figure>
     <img src="images/manipulator_proposed.png"
          alt="The framework of SLITHERS which takes in a set of desired end effector poses, computes the desired state based off of an objective function, and executes the motion to achieve the desired states.">
-    <figcaption>The framework of SLITHERS which takes in a set of desired end effector poses, computes the desired state based off of an objective function, and executes the motion to achieve the desired states.</figcaption>
+    <figcaption><em>The framework of SLITHERS which takes in a set of desired end effector poses, computes the desired state based off of an objective function, and executes the motion to achieve the desired states.</em></figcaption>
 </figure>
+<br/><br/>
 
 ## Directories
 
@@ -48,46 +50,54 @@ The `export_fig` directory contains a copy of [export_fig](https://github.com/al
 <figure>
     <img src="images/full_pose.png"
          alt="Test paths used for the simulated experiment with the colored axes representing the desired pose of the end effector. The red, blue, and green axes represent the x, y, and z axes, respectively.">
-    <figcaption>Test paths used for the simulated experiment with the colored axes representing the desired pose of the end effector. The red, blue, and green axes represent the x, y, and z axes, respectively.</figcaption>
+    <figcaption><em>Test paths used for the simulated experiment with the colored axes representing the desired pose of the end effector. The red, blue, and green axes represent the x, y, and z axes, respectively.</em></figcaption>
 </figure>
+<br/><br/>
 
 <figure>
     <img src="images/full_error_nh.png"
          alt="The error of the end effector on each of the different paths for both the position and orientation when using a non-holonomic mobile platform and computed by the proposed method.">
-    <figcaption>The error of the end effector on each of the different paths for both the position and orientation when using a non-holonomic mobile platform and computed by the proposed method.</figcaption>
+    <figcaption><em>The error of the end effector on each of the different paths for both the position and orientation when using a non-holonomic mobile platform and computed by the proposed method.</em></figcaption>
 </figure>
+<br/><br/>
 
 <figure>
     <img src="images/full_base_nh.png"
          alt="The computed angular and linear velocity for the mobile manipulator with a non-holonomic base using the proposed method.">
-    <figcaption>The computed angular and linear velocity for the mobile manipulator with a non-holonomic base using the proposed method.</figcaption>
+    <figcaption><em>The computed angular and linear velocity for the mobile manipulator with a non-holonomic base using the proposed method.</em></figcaption>
 </figure>
+<br/><br/>
 
 <figure>
     <img src="images/full_joint_nh.png"
          alt="The computed joint states for the robotic manipulator mounted on the non-holonomic base using the proposed method.">
-    <figcaption>The computed joint states for the robotic manipulator mounted on the non-holonomic base using the proposed method.</figcaption>
+    <figcaption><em>The computed joint states for the robotic manipulator mounted on the non-holonomic base using the proposed method.</em></figcaption>
 </figure>
+<br/><br/>
 
 <figure>
     <img src="images/full_error_h.png"
          alt="The error of the end effector on each of the different paths for both the position and orientation when using a holonomic mobile platform and computed by the proposed method.">
-    <figcaption>The error of the end effector on each of the different paths for both the position and orientation when using a holonomic mobile platform and computed by the proposed method.</figcaption>
+    <figcaption><em>The error of the end effector on each of the different paths for both the position and orientation when using a holonomic mobile platform and computed by the proposed method.</em></figcaption>
 </figure>
+<br/><br/>
 
 <figure>
     <img src="images/full_base_h.png"
          alt="The computed angular and linear velocities for the mobile manipulator with a holonomic base using the proposed method. The forward and translational velocities represent the velocities in the x and y direction with respect to the base frame, respectively.">
-    <figcaption>The computed angular and linear velocities for the mobile manipulator with a holonomic base using the proposed method. The forward and translational velocities represent the velocities in the x and y direction with respect to the base frame, respectively.</figcaption>
+    <figcaption><em>The computed angular and linear velocities for the mobile manipulator with a holonomic base using the proposed method. The forward and translational velocities represent the velocities in the x and y direction with respect to the base frame, respectively.</em></figcaption>
 </figure>
+<br/><br/>
 
 <figure>
     <img src="images/full_joint_h.png"
          alt="The computed joint states for the robotic manipulator mounted on the holonomic base using the proposed method.">
-    <figcaption>The computed joint states for the robotic manipulator mounted on the holonomic base using the proposed method.</figcaption>
+    <figcaption><em>The computed joint states for the robotic manipulator mounted on the holonomic base using the proposed method.</em></figcaption>
 </figure>
+<br/><br/>
 
 <table>
+    <caption><b>Summarized metrics and results from the simulated experiment when testing the state planner on mobile manipulators.</b></caption>
     <thead>
         <tr>
             <th colspan=1>Mobile Base Configuration</th>
@@ -322,9 +332,10 @@ where $n$ is the number of links in the robotic system.
 
 <figure>
     <img src="images/differential_drive.png"
-         alt="Diagram of differential drive robot frame, $B$, located in the world frame, $W$, with states, $x,\ y,\ \mathrm{and}\ \phi$, and control inputs, $v\ \mathrm{and}\ \omega$.">
-    <figcaption>Diagram of differential drive robot frame, $B$, located in the world frame, $W$, with states, $x,\ y,\ \mathrm{and}\ \phi$, and control inputs, $v\ \mathrm{and}\ \omega$.</figcaption>
+         alt="Diagram of differential drive robot frame, B, located in the world frame, W, with states, x, y, and phi, and control inputs, v and omega.">
+    <figcaption><em>Diagram of differential drive robot frame, <b>B</b>, located in the world frame, <b>W</b>, with states, x, y, and &phi;, and control inputs, v and &omega;.</em></figcaption>
 </figure>
+<br/><br/>
 
 ```math
 \begin{equation}
@@ -402,9 +413,10 @@ where $n$ is the number of links in the robotic system.
 
 <figure>
     <img src="images/holonomic.png"
-         alt="Diagram of mecanum drive robot frame, $B$, located in the world frame, $W$, with states, $x,\ y,\ \mathrm{and}\ \phi$, and control inputs, $v_{x},\ v_{y},\ \mathrm{and}\ \omega$.">
-    <figcaption>Diagram of mecanum drive robot frame, $B$, located in the world frame, $W$, with states, $x,\ y,\ \mathrm{and}\ \phi$, and control inputs, $v_{x},\ v_{y},\ \mathrm{and}\ \omega$.</figcaption>
+         alt="Diagram of mecanum drive robot frame, B, located in the world frame, W, with states, x, y, and phi, and control inputs, v_x, v_y, and omega.">
+    <figcaption><em>Diagram of mecanum drive robot frame, <b>B</b>, located in the world frame, <b>W</b>, with states, x, y, and &phi;, and control inputs, v<sub>x</sub>, v<sub>y</sub>, and &omega;.</em></figcaption>
 </figure>
+<br/><br/>
 
 ```math
 \begin{equation}
@@ -482,9 +494,10 @@ where $n$ is the number of links in the robotic system.
 
 <figure>
     <img src="images/manipulator.png"
-         alt="Diagram of Universal Robot UR5 with base frame, $B$, and end effector frame, $E$, in the zero position. Screw coordinates, $S_{i}\ \forall i \in n$, and joint angles, $\theta_{i}\ \forall i \in n$, are used to define kinematic model of the six link manipulator, $n=6$.">
-    <figcaption>Diagram of Universal Robot UR5 with base frame, $B$, and end effector frame, $E$, in the zero position. Screw coordinates, $S_{i}\ \forall i \in n$, and joint angles, $\theta_{i}\ \forall i \in n$, are used to define kinematic model of the six link manipulator, $n=6$.</figcaption>
+         alt="Diagram of Universal Robot UR5 with base frame, B, and end effector frame, E, in the zero position. Screw coordinates, S_i forall i in n, and joint angles, theta_i forall i in n, are used to define kinematic model of the six link manipulator, n=6.">
+    <figcaption><em>Diagram of Universal Robot UR5 with base frame, <b>B</b>, and end effector frame, <b>E</b>, in the zero position. Screw coordinates, <b>S</b><sub>i</sub> &forall; i &isin; n, and joint angles, &theta;<sub>i</sub> &forall; i &isin; n, are used to define kinematic model of the six link manipulator, n=6.</em></figcaption>
 </figure>
+<br/><br/>
 
 ```math
 \begin{equation}
@@ -818,8 +831,9 @@ where $n$ is the number of links in the robotic system.
 <figure>
     <img src="images/robot_model_nh.png"
          alt="Mobile manipulator consisting of a six degree of freedom industrial robotic manipulator (Universal Robots UR5e) mounted on a non-holonomic mobile platform (Clearpath Robotics Husky).">
-    <figcaption>Mobile manipulator consisting of a six degree of freedom industrial robotic manipulator (Universal Robots UR5e) mounted on a non-holonomic mobile platform (Clearpath Robotics Husky).</figcaption>
+    <figcaption><em>Mobile manipulator consisting of a six degree of freedom industrial robotic manipulator (Universal Robots UR5e) mounted on a non-holonomic mobile platform (Clearpath Robotics Husky).</em></figcaption>
 </figure>
+<br/><br/>
 
 ```math
 \begin{equation}
@@ -1203,8 +1217,9 @@ where $n$ is the number of links in the robotic system.
 <figure>
     <img src="images/robot_model_h.png"
          alt="Mobile manipulator consisting of a six degree of freedom industrial robotic manipulator (Universal Robots UR5e) mounted on a holonomic mobile platform.">
-    <figcaption>Mobile manipulator consisting of a six degree of freedom industrial robotic manipulator (Universal Robots UR5e) mounted on a holonomic mobile platform.</figcaption>
+    <figcaption><em>Mobile manipulator consisting of a six degree of freedom industrial robotic manipulator (Universal Robots UR5e) mounted on a holonomic mobile platform.</em></figcaption>
 </figure>
+<br/><br/>
 
 ```math
 \begin{equation}
