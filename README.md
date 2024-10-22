@@ -1598,3 +1598,19 @@ where $n$ is the number of links in the robotic system.
     [\mathbf{P}^{W}_{E,k+1}] = [\mathbf{P}^{W}_{B,k}][\Delta\mathbf{P}^{B}_{B,k}]e^{[\mathbf{S}_{{1,k}}]^{\wedge}}e^{[\mathbf{S}_{{2,k}}]^{\wedge}}e^{[\mathbf{S}_{{3,k}}]^{\wedge}}e^{[\mathbf{S}_{{4,k}}]^{\wedge}}e^{[\mathbf{S}_{{5,k}}]^{\wedge}}e^{[\mathbf{S}_{{6,k}}]^{\wedge}}[\mathbf{P}^{B}_{0}]
 \end{equation}
 ```
+
+## Citation
+
+If you found this repository useful please consider citing:
+
+```
+@misc{smith2024lietheorybasedoptimization,
+      title={Lie Theory Based Optimization for Unified State Planning of Mobile Manipulators}, 
+      author={William Smith and Siddharth Singh and Julia Rudy and Yuxiang Guan},
+      year={2024},
+      eprint={2410.15443},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2410.15443}, 
+}
+```
