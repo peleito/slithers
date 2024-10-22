@@ -8,6 +8,7 @@
 *corresponding author
 
 <a href="https://arxiv.org/abs/2410.15443"><img src='https://img.shields.io/badge/arXiv-SLITHERS-red' alt='Paper PDF'></a>
+<a href="https://opensource.org/license/mit"><img src='https://img.shields.io/badge/License-MIT License-lightgrey' alt='Paper PDF'></a>
 </div>
 
 <figure>
