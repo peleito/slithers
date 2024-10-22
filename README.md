@@ -1,4 +1,14 @@
-# SLITHERS (State planner using LIe THEory for RoboticS)
+<div align="center">
+<h1>SLITHERS (State planner using LIe THEory for RoboticS)</h1>
+
+[**William Smith**](https://www.linkedin.com/in/williamsmithv/)<sup>1*</sup> · [**Siddharth Singh**](https://30siddharth.github.io/)<sup>2</sup> · [**Julia Rudy**](https://www.linkedin.com/in/julia-rudy/)<sup>2</sup> · [**Yuxiang Guan**](https://www.linkedin.com/in/yuxiangguan/)<sup>3</sup>
+
+<sup>1</sup>Applied Research Associates&emsp;&emsp;&emsp;<sup>2</sup>University of Virginia&emsp;&emsp;&emsp;<sup>3</sup>University of Texas at Dallas
+<br>
+*corresponding author
+
+<a href="https://arxiv.org/abs/2410.15443"><img src='https://img.shields.io/badge/arXiv-SLITHERS-red' alt='Paper PDF'></a>
+</div>
 
 <figure>
     <img src="images/manifold.png"
